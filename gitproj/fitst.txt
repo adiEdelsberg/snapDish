@@ -1,1 +1,1 @@
-I need a vacation! This is our fi rst commit.
+I need a vacation! This is our first commit.
