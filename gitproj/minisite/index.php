@@ -1,4 +1,7 @@
-<?
-	for($i = 0; $i<10; $i++)
-		echo $i.'</br>';
+<?php
+	$my_array = array('a','b','c');
+	foreach($my_array as $item)
+	{
+		echo $item.'</br>';
+	}
 ?>
