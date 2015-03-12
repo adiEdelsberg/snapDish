@@ -21,3 +21,27 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
+.login{
+	background: url('../images/login-bg.jpg') no-repeat center center;
+	background-size: cover;
+	
+	.logo{
+		margin: 160px auto 0;
+		width: 210px;
+		img{
+			width: inherit;
+		}
+	}
+	
+	.facebook-btn{
+		width: 290px;
+		margin: 96px auto 0;
+		cursor: pointer;
+		img{
+			width: inherit;
+		}
+	}
+}
+
+
+
