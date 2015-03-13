@@ -22,11 +22,18 @@ angular.module('starter', ['ionic', 'starter.controllers'])
 
 	openFB.init({appId: '1604369319786635'});
 
-  $urlRouterProvider.otherwise('/');
+  $urlRouterProvider.otherwise('/login');
 
   $stateProvider.state('login', {
-    url: '/',
+    url: '/login',
     templateUrl: 'partials/login.html',
 	controller: 'LoginCtrl'
   })
+  
+  $stateProvider.state('restaurants', {
+    url: '/restaurants',
+    templateUrl: 'partials/restaurants.html',
+	controller: 'RestaurantsCtrl'
+  })
+  
 })
