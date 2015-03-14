@@ -1,7 +1,11 @@
 <ion-view title="Restaurants">
 	<ion-content>
+		<label class="item item-input">
+			<i class="icon ion-search placeholder-icon"></i>
+			<input type="text" placeholder="Search" ng-model="query" ng-change="setList(query)">
+		</label>
 		<ion-list >
-			<ion-item class="item-avatar" ng-repeat="restaurant in restaurants">
+			<ion-item class="item-avatar" ng-repeat="restaurant in restaurants | filter: search">
 				<img ng-src="{{restaurant.LOGO}}">
 				<h2>{{restaurant.NAME}}</h2>
 				<p>{{restaurant.ADDRESS}}</p>
