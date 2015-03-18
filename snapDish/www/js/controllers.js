@@ -1,4 +1,4 @@
-angular.module('controllers', ['services'])
+angular.module('app')
 
 .controller('LoginCtrl', ['$scope', '$location', function($scope, $location) {
   
@@ -21,10 +21,30 @@ angular.module('controllers', ['services'])
   
 }])
 
-.controller('RestaurantsCtrl', ['$scope', 'restaurants', function($scope, restaurants){
+.controller('RestaurantsCtrl', ['$scope', 'server', function($scope, server){
 
-  restaurants.getData().then(function(response){
+  server.getRestaurants().then(function(response){
     $scope.restaurants = response.data;
   });
+
+  $scope.goToDish = function(id){
+
+    server.getDishes(id).then(function(response){
+
+      console.log(response);
+     // $location.path('dishes');
+
+    },function(error){
+
+
+
+    });
+  };
+
+}])
+
+.controller('DishesCtrl', ['$scope', 'server', function($scope, server){
+
+
 
 }]);
