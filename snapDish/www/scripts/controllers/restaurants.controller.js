@@ -1,13 +1,9 @@
 angular.module('app')
 
-.controller('RestaurantsCtrl', ['$scope', 'server', function($scope, server){
-
-  server.getRestaurants().then(function(response){
-    $scope.restaurants = response.data;
-  }) 
-
+.controller('RestaurantsCtrl', ['$scope', '$location', 'server', 'restaurant', function($scope, $location, server, restaurant){
 
     $scope.query = '';
+
     server.getRestaurants().then(function(response){
       $scope.restaurants = response.data;
     });
@@ -20,15 +16,13 @@ angular.module('app')
     };
 
 
-  $scope.goToDish = function(id){
+  $scope.goToRestaurant = function(id){
 
-    server.getDishes(id).then(function(response){
+    restaurant.getDishes(id).then(function(response){
 
-      console.log(response);
+      $location.path('restaurant');
 
     },function(error){
-
-
 
     });
   };

@@ -34,10 +34,10 @@ angular.module('app', ['ionic'])
 	controller: 'RestaurantsCtrl'
   })
   
-  $stateProvider.state('dishes', {
-    url: '/dishes',
-    templateUrl: 'partials/dishes.html',
-  controller: 'DishesCtrl'
+  $stateProvider.state('restaurant', {
+    url: '/restaurant',
+    templateUrl: 'partials/restaurant.html',
+  controller: 'RestaurantCtrl'
   })
 
   $urlRouterProvider.otherwise('/login');

@@ -8,7 +8,7 @@
 
 		<ion-list >
 
-			<ion-item class="item-avatar" ng-repeat="restaurant in restaurants | filter: search" ng-click="goToDish(restaurant.ID)">
+			<ion-item class="item-avatar" ng-repeat="restaurant in restaurants | filter: search" ng-click="goToRestaurant(restaurant.ID)">
 			<img ng-src="{{restaurant.LOGO}}">
 			
 			<h2>{{restaurant.NAME}}</h2>
