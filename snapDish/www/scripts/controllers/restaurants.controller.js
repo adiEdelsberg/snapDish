@@ -15,16 +15,4 @@ angular.module('app')
         $scope.query = query;
     };
 
-
-  $scope.goToRestaurant = function(id){
-
-    restaurant.getDishes(id).then(function(response){
-
-      $location.path('restaurant');
-
-    },function(error){
-
-    });
-  };
-
 }]);

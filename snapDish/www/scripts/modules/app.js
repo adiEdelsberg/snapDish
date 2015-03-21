@@ -20,26 +20,26 @@ angular.module('app', ['ionic'])
 
 .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
-	openFB.init({appId: '1604369319786635'});
+openFB.init({appId: '1604369319786635'});
 
-  $stateProvider.state('login', {
-    url: '/login',
-    templateUrl: 'partials/login.html',
-	controller: 'LoginCtrl'
-  })
-  
-  $stateProvider.state('restaurants', {
-    url: '/restaurants',
-    templateUrl: 'partials/restaurants.html',
-	controller: 'RestaurantsCtrl'
-  })
-  
-  $stateProvider.state('restaurant', {
-    url: '/restaurant',
-    templateUrl: 'partials/restaurant.html',
+$stateProvider.state('login', {
+  url: '/login',
+  templateUrl: 'partials/login.html',
+  controller: 'LoginCtrl'
+})
+
+$stateProvider.state('restaurants', {
+  url: '/restaurants',
+  templateUrl: 'partials/restaurants.html',
+  controller: 'RestaurantsCtrl'
+})
+
+$stateProvider.state('restaurant', {
+  url: '/restaurant/:restaurantId',
+  templateUrl: 'partials/restaurant.html',
   controller: 'RestaurantCtrl'
-  })
+})
 
-  $urlRouterProvider.otherwise('/login');
-  
+$urlRouterProvider.otherwise('/login');
+
 }])

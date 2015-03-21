@@ -10,8 +10,7 @@ angular.module('app')
       /**
        * Get dishes by restaurant id
        *
-       * @param {Object} accounts
-       * @return {Object} accounts (Promise)
+       * @param {Number} restaurantId
        */
       getDishes: function(restaurantId) {
 
@@ -21,7 +20,7 @@ angular.module('app')
 
           dishes = response;
 
-          deferred.resolve(response);
+          deferred.resolve(response.data);
 
         },function(error) {
 
