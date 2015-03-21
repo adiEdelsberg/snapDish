@@ -1,4 +1,4 @@
-angular.module('app', ['ionic'])
+angular.module('app', ['ionic', 'ngCordova'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -37,7 +37,8 @@ $stateProvider.state('restaurant', {
 
 $stateProvider.state('new_dish', {
   url: '/new_dish',
-  templateUrl: 'partials/new_dish.html'
+  templateUrl: 'partials/new_dish.html',
+  controller: 'DishCtrl'
 })
 
 $urlRouterProvider.otherwise('/restaurants');

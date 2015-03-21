@@ -1,8 +1,9 @@
 angular.module('app')
 
-.controller('RestaurantCtrl', ['$scope', '$stateParams', 'restaurant', function($scope, $stateParams, restaurant){
+.controller('RestaurantCtrl', ['$scope', '$stateParams', 'restaurant', '$rootScope',
+	function($scope, $stateParams, restaurant, $rootScope){
 
-	$scope.dishes = restaurant.getDishes($stateParams.restaurantId).then(function(response){
+	restaurant.getDishes($stateParams.restaurantId).then(function(response){
 
 		$scope.dishes = response;
 
@@ -10,6 +11,6 @@ angular.module('app')
 
 		console.log(error);
 
-	});	
+	});
 
 }]);
