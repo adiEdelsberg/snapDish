@@ -40,6 +40,6 @@ $stateProvider.state('new_dish', {
   templateUrl: 'partials/new_dish.html'
 })
 
-$urlRouterProvider.otherwise('/login');
+$urlRouterProvider.otherwise('/restaurants');
 
 }])
