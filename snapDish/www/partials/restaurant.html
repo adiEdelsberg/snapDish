@@ -1,6 +1,6 @@
 <ion-view title="Restaurant">
-	<ion-content>
 
+	<ion-content>
 		<ion-list >
 
 			<ion-item class="item-avatar" ng-repeat="dish in dishes">
@@ -9,6 +9,10 @@
 
 			</ion-item>
 		</ion-list>
-
 	</ion-content>
+
+	<a ui-sref="new_dish" class="bar bar-footer bar-balanced">
+		<div class="title">Add New</div>
+	</a>
+
 </ion-view>

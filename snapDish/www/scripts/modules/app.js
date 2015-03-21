@@ -35,6 +35,11 @@ $stateProvider.state('restaurant', {
   controller: 'RestaurantCtrl'
 })
 
+$stateProvider.state('new_dish', {
+  url: '/new_dish',
+  templateUrl: 'partials/new_dish.html'
+})
+
 $urlRouterProvider.otherwise('/login');
 
 }])
