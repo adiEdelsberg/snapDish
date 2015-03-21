@@ -4,6 +4,7 @@ angular.module('app')
 
 	$scope.dishes = restaurant.getDishes($stateParams.restaurantId).then(function(response){
 
+		console.log(typeof response);
 		$scope.dishes = response;
 
 	}, function(error){

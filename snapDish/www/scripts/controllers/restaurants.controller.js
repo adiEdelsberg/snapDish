@@ -1,6 +1,6 @@
 angular.module('app')
 
-.controller('RestaurantsCtrl', ['$scope', '$location', 'server', 'restaurant', function($scope, $location, server, restaurant){
+.controller('RestaurantsCtrl', ['$scope', '$location', 'server', function($scope, $location, server){
 
     $scope.query = '';
 
