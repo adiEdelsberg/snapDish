@@ -1,6 +1,6 @@
 angular.module('app')
 
-.controller('NewDishCtrl', ['$scope', '$location', 'server', '$cordovaCamera', '$ionicPlatform', '$rootScope',
+.controller('ViewDishCtrl', ['$scope', '$location', 'server', '$cordovaCamera', '$ionicPlatform', '$rootScope',
 	function($scope, $location, server, $cordovaCamera, $ionicPlatform, $rootScope){
 		$scope.dish = {};
 

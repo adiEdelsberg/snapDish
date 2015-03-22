@@ -1,18 +1,18 @@
 <ion-view title="Restaurant">
-
 	<ion-content>
-		<ion-list >
-
-			<ion-item class="item-avatar" ng-repeat="dish in dishes">
-			
-			<h2>{{dish.NAME}}</h2>
-
+		<label class="item item-input">
+			<i class="icon ion-search placeholder-icon"></i>
+			<input type="text" placeholder="Search" ng-model="dishQuery" ng-change="setList(dishQuery)">
+		</label>
+		<ion-list>
+			<ion-item class="item-avatar" ng-repeat="dish in dishes | filter: search" ui-sref="view_dish">
+				<img ng-src="{{dish.IMG}}">
+				<h2>{{dish.NAME}}</h2>
+				<p>{{dish.RATE}}</p>
 			</ion-item>
 		</ion-list>
 	</ion-content>
-
 	<a ui-sref="new_dish" class="bar bar-footer bar-balanced">
 		<div class="title">Add New</div>
 	</a>
-
 </ion-view>
