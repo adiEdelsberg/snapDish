@@ -2,6 +2,8 @@ angular.module('app')
 
 .factory('restaurant', ['$q', 'server', function($q, server) {
 
+    var currentRestaurant;
+
     var methods = {
 
       /**
@@ -11,6 +13,8 @@ angular.module('app')
        * @return {Object} dishes list(Promise)
        */
       getDishes: function(restaurantId) {
+
+        currentRestaurant = restaurantId;
 
         var deferred = $q.defer();
 
@@ -25,6 +29,18 @@ angular.module('app')
         });
 
         return deferred.promise;
+      },
+
+      /**
+       * Get dishes by restaurant id
+       *
+       * @param {Number} restaurantId
+       * @return {Object} dishes list(Promise)
+       */
+      getCurrentRestaurant: function(){
+
+        return currentRestaurant;
+
       }
 
     }
