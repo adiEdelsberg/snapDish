@@ -6,7 +6,7 @@ angular.module('app')
 
 		$ionicPlatform.ready(function () {
 
-			$scope.takePicture = function(userSourchType) {
+			$scope.takePicture = function takePicture(userSourchType) {
 
 				var optionSourchType = userSourchType === 'camera' ? Camera.PictureSourceType.CAMERA : Camera.PictureSourceType.PHOTOLIBRARY;
 
