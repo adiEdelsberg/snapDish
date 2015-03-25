@@ -50,6 +50,7 @@ angular.module('app')
        * @return {Function} sendData
        */
       getRestaurants: function() {
+
         var data = {
           command: "get_restaurants"
         };
@@ -62,9 +63,10 @@ angular.module('app')
        *
        * @param {Number} id
        */
-      getDishes: function(id) {
+      getRestaurant: function(id) {
+
         var data = {
-          command: "get_dishes",
+          command: "get_restaurant",
           id: id
         };
 
@@ -77,6 +79,7 @@ angular.module('app')
        * @param {Number} id
        */
       setDish: function(dish) {
+
         var data = {
           command: "set_dish",
           image: dish.image,

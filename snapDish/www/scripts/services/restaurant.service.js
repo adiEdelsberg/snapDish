@@ -1,8 +1,9 @@
 angular.module('app')
 
-.factory('restaurant', ['$q', 'server', function($q, server) {
+.factory('restaurant', ['$q', 'server','restaurants', function($q, server, restaurants) {
 
-    var currentRestaurant;
+    //cached restaurants
+    var _restaurant = {};
 
     var methods = {
 
@@ -12,23 +13,24 @@ angular.module('app')
        * @param {Number} restaurantId
        * @return {Object} dishes list(Promise)
        */
-      getDishes: function(restaurantId) {
-
-        currentRestaurant = restaurantId;
+      getRestaurant: function(restaurantId) {
 
         var deferred = $q.defer();
 
-        server.getDishes(restaurantId).then(function(response) {
+          server.getRestaurant(restaurantId).then(function(response) {
 
-          deferred.resolve(response.data);
+            _restaurant = response.data;
 
-        },function(error) {
+            deferred.resolve(response.data);
 
-          deferred.reject(error);
+          },function(error) {
 
-        });
+            deferred.reject(error);
+
+          });
 
         return deferred.promise;
+
       },
 
       /**
@@ -39,9 +41,10 @@ angular.module('app')
        */
       getCurrentRestaurant: function(){
 
-        return currentRestaurant;
+        return _restaurant;
 
       }
+
 
     }
 
