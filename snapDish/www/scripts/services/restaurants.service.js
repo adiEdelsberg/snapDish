@@ -2,7 +2,7 @@ angular.module('app')
 
 .factory('restaurants', ['$q', 'server', function($q, server) {
 
-    var restaurants;
+    var currentRestaurants;
 
     var methods = {
 
@@ -14,29 +14,16 @@ angular.module('app')
        */
       getRestaurants: function() {
 
-        var deferred = $q.defer();
+        if(currentRestaurants){
 
-        if(restaurants){
-
-          deferred.resolve(restaurants);
+          return currentRestaurants;
 
         }else{
 
-          server.getRestaurants().then(function(response) {
-
-            currentRestaurants = response.data;
-
-            deferred.resolve(currentRestaurants);
-
-          },function(error) {
-
-            deferred.reject(error);
-
-          });
+          return server.getRestaurants();
 
         }
 
-        return deferred.promise;
       },
 
       /**

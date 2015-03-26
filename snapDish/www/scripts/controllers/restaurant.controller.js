@@ -18,8 +18,8 @@ function($scope, $stateParams, restaurant, $rootScope) {
 	};
 
 	restaurant.getRestaurant($stateParams.restaurantId).then(function(response){
-
-		$scope.restaurant = response;
+		
+		$scope.restaurant = response.data;
 
 	}, function(error){
 

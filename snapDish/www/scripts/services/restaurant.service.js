@@ -3,7 +3,7 @@ angular.module('app')
 .factory('restaurant', ['$q', 'server','restaurants', function($q, server, restaurants) {
 
     //cached restaurants
-    var _restaurant = {};
+    var currentRestaurant;
 
     var methods = {
 
@@ -15,21 +15,15 @@ angular.module('app')
        */
       getRestaurant: function(restaurantId) {
 
-        var deferred = $q.defer();
+        if(currentRestaurant){
 
-          server.getRestaurant(restaurantId).then(function(response) {
+          return currentRestaurant;         
 
-            _restaurant = response.data;
+        }else{
 
-            deferred.resolve(response.data);
+          return server.getRestaurant(restaurantId);
 
-          },function(error) {
-
-            deferred.reject(error);
-
-          });
-
-        return deferred.promise;
+        }
 
       },
 
@@ -39,10 +33,21 @@ angular.module('app')
        * @param {Number} restaurantId
        * @return {Object} dishes list(Promise)
        */
-      getCurrentRestaurant: function(){
+      setDish: function(dish) {
 
-        return _restaurant;
+        var deferred = $q.defer();
 
+          server.setDish(dish).then(function(response) {
+
+            deferred.resolve(response);
+
+          },function(error) {
+
+            deferred.reject(error);
+
+          });
+
+        return deferred.promise;
       }
 
 

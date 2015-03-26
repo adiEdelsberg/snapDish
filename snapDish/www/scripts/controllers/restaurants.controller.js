@@ -6,7 +6,7 @@ angular.module('app')
 
 	restaurants.getRestaurants().then(function(response){
 
-	  $scope.restaurants = response;
+	  $scope.restaurants = response.data;
 
 	});
 
