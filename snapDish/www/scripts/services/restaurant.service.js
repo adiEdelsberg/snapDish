@@ -7,6 +7,12 @@ angular.module('app')
 
     var methods = {
 
+      getCurrentRestaurant: function() {
+
+        return currentRestaurant;
+
+      },
+
       /**
        * Get dishes by restaurant id
        *
@@ -15,15 +21,21 @@ angular.module('app')
        */
       getRestaurant: function(restaurantId) {
 
-        if(currentRestaurant){
+        var deferred = $q.defer();
 
-          return currentRestaurant;         
+          server.getRestaurant(restaurantId).then(function(response){
 
-        }else{
+            currentRestaurant = response.data;
 
-          return server.getRestaurant(restaurantId);
+            deferred.resolve(currentRestaurant);
 
-        }
+          }, function(error){
+
+
+
+          });
+
+        return deferred.promise;
 
       },
 

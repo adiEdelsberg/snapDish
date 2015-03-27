@@ -19,7 +19,7 @@ function($scope, $stateParams, restaurant, $rootScope) {
 
 	restaurant.getRestaurant($stateParams.restaurantId).then(function(response){
 		
-		$scope.restaurant = response.data;
+		$scope.restaurant = response;
 
 	}, function(error){
 

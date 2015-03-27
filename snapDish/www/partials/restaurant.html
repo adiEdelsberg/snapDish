@@ -1,6 +1,6 @@
 <ion-view>
 	<ion-nav-title>{{restaurant.name}}</ion-nav-title>
-	<ion-content>
+	<ion-content class="has-footer">
 		<label class="item item-input">
 			<i class="icon ion-search placeholder-icon"></i>
 			<input type="text" placeholder="Search" ng-model="dishQuery" ng-change="setList(dishQuery)">
@@ -13,7 +13,7 @@
 			</ion-item>
 		</ion-list>
 	</ion-content>
-	<a ui-sref="new_dish" class="bar bar-footer bar-balanced">
+	<button ui-sref="new_dish" class="bar bar-footer bar-balanced">
 		<div class="title">Add New</div>
-	</a>
+	</button>
 </ion-view>
