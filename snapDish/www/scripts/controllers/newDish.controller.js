@@ -1,7 +1,7 @@
 angular.module('app')
 
-.controller('NewDishCtrl', ['$scope', '$location', '$cordovaCamera', '$ionicPlatform', '$rootScope', '$state', 'restaurant',
-	function($scope, $location, $cordovaCamera, $ionicPlatform, $rootScope, $state, restaurant){
+.controller('NewDishCtrl', ['$scope', '$location', '$cordovaCamera', '$ionicPlatform', '$rootScope', '$state', '$ionicHistory', 'restaurant',
+	function($scope, $location, $cordovaCamera, $ionicPlatform, $rootScope, $state, $ionicHistory, restaurant){
 		$scope.dish = {};
 
 		$ionicPlatform.ready(function () {
@@ -48,6 +48,10 @@ angular.module('app')
 
 				restaurant.setDish(dish).then(function(response){
 
+					//clears cache so restaurant controller will update the view
+					$ionicHistory.clearCache();
+
+					//the "reload: true" should refresh the controller, but it doesn't work
 					$state.go('restaurant', { restaurantId: _restaurant.id }, { reload: true });
 
 				}, function(error){
