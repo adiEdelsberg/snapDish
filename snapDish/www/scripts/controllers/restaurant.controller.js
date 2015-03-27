@@ -1,7 +1,11 @@
 angular.module('app')
 
-.controller('RestaurantCtrl', ['$scope', '$stateParams', 'restaurant', '$rootScope',
-function($scope, $stateParams, restaurant, $rootScope) {
+.controller('RestaurantCtrl', ['$scope', '$stateParams', '$ionicLoading', 'restaurant',
+function($scope, $stateParams, $ionicLoading, restaurant) {
+
+	$ionicLoading.show({
+		template: '<i class="ion-loading-c"></i><br/>Loading dishes...'
+	});
 
 	$scope.dishQuery = '';
 
@@ -20,6 +24,8 @@ function($scope, $stateParams, restaurant, $rootScope) {
 	restaurant.getRestaurant($stateParams.restaurantId).then(function(response){
 		
 		$scope.restaurant = response;
+
+		$ionicLoading.hide();
 
 	}, function(error){
 
