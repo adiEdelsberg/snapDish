@@ -9,7 +9,7 @@
 			<ion-item class="item-avatar" ng-repeat="dish in restaurant.dishes | filter: search" ui-sref="view_dish">
 				<img ng-src="{{dish.URL}}">
 				<h2>{{dish.NAME}}</h2>
-				<p>{{dish.RATE}}</p>
+				<p>{{dish.RATING}}</p>
 			</ion-item>
 		</ion-list>
 	</ion-content>
