@@ -1,7 +1,13 @@
 <ion-view title="Dish">
 
 	<ion-content>
-view dish
+		<label class="item item-input">
+			<span class="input-label">Set rating:</span>
+			<input type="text" ng-model="dish.rating">
+		</label>
+		<button ng-click="setRating()" class="button">
+ 		 Submit
+		</button>
 	</ion-content>
 
 </ion-view>

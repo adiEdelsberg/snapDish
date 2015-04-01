@@ -41,10 +41,10 @@ $stateProvider.state('new_dish', {
   controller: 'NewDishCtrl'
 })
 
-$stateProvider.state('view_dish', {
-  url: '/view_dish',
+$stateProvider.state('dish', {
+  url: '/dish/:dishId',
   templateUrl: 'partials/dish.html',
-  controller: 'ViewDishCtrl'
+  controller: 'DishCtrl'
 })
 
 $urlRouterProvider.otherwise('/restaurants');
