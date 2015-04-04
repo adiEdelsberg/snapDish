@@ -17,7 +17,52 @@ angular.module('app')
 
         return server.setRating(dishId, rating);
 
+      },
+
+
+      addDishImage: function(dish) {
+
+        var deferred = $q.defer();
+
+          server.addDishImage(dish).then(function(response) {
+
+            deferred.resolve(response);
+
+          },function(error) {
+
+            deferred.reject(error);
+
+          });
+
+        return deferred.promise;
+      },
+
+      /**
+       * Get dish by dish id
+       *
+       * @param {Number} dishId
+       * @return {Object} dish(Promise)
+       */
+      getDish: function(dishId) {
+
+        var deferred = $q.defer();
+
+          server.getDish(dishId).then(function(response){
+
+            deferred.resolve(response.data);
+
+          }, function(error){
+
+              alert('no dish');
+
+          });
+
+        return deferred.promise;
+
       }
+
+
+
 
     }
 

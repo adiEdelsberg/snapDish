@@ -13,7 +13,7 @@ angular.module('app')
    *
    * @param {Object} endpoint - web server url
    * @param {Object} data to send
-   * @param {String} method 
+   * @param {String} method
    * @return {Object} accounts (Promise)
    */
   function restCall(endpoint, data, method) {
@@ -28,10 +28,10 @@ angular.module('app')
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
 
     }).then(function(response) {
-      
+
       deferred.resolve(response.data);
 
-    }, function(error) { 
+    }, function(error) {
 
       deferred.reject(error);
 
@@ -74,6 +74,21 @@ angular.module('app')
       },
 
       /**
+       * Get dish by id
+       *
+       * @param {Number} id
+       */
+      getDish: function(id) {
+
+        var data = {
+          command: "get_dish",
+          id: id
+        };
+
+        return restCall(endpoints.MGR, data, 'POST');
+      },
+
+      /**
        * Get restaurant's dishes by id
        *
        * @param {Number} id
@@ -84,6 +99,23 @@ angular.module('app')
           command: "set_dish",
           image: dish.image,
           name: dish.name,
+          restaurant: dish.restaurant
+        };
+
+        return restCall(endpoints.MGR, data, 'POST');
+      },
+
+      /**
+       * Get restaurant's dishes by id
+       *
+       * @param {Number} id
+       */
+      addDishImage: function(dish) {
+
+        var data = {
+          command: "add_dish_image",
+          image: dish.image,
+          id: dish.id,
           restaurant: dish.restaurant
         };
 

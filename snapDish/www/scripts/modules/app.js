@@ -36,8 +36,14 @@ $stateProvider.state('restaurant', {
 })
 
 $stateProvider.state('new_dish', {
-  url: '/new_dish',
+  url: '/new_dish/:dishId',
   templateUrl: 'partials/new_dish.html',
+  controller: 'NewDishCtrl'
+})
+
+$stateProvider.state('new_dish_image', {
+  url: '/new_dish_image/:dishId',
+  templateUrl: 'partials/new_dish_image.html',
   controller: 'NewDishCtrl'
 })
 
