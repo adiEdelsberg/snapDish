@@ -1,0 +1,21 @@
+<ion-view title="New Dish Image">
+
+	<ion-content>
+		<a ng-click="takePicture('library')" class="button button-outline icon-right ion-images button-positive">Photo Library</a>
+		<a ng-click="takePicture('camera')" class="button button-outline icon-right ion-social-instagram-outline button-positive">Take Picture</a>
+		<a ng-click="save('image')" class="button button-outline button-positive">Save</a>
+		<label class="item">
+			<span class="input-label">New Dish Image</span>
+		</label>
+		<ion-list>
+			<ion-item class="item-avatar">
+				<img ng-src="{{dish.base64_string}}">
+				<h2>{{dish.name}}</h2>
+			</ion-item>
+		</ion-list>
+		<div class="item item-image">
+			<img ng-show="dish.base64_string !== undefined" ng-src="{{dish.base64_string}}">
+		</div>
+	</ion-content>
+
+</ion-view>
