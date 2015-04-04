@@ -22,7 +22,7 @@ function($scope, $stateParams, $ionicLoading, restaurant) {
 	};
 
 	restaurant.getRestaurant($stateParams.restaurantId).then(function(response){
-		
+
 		$scope.restaurant = response;
 
 		$ionicLoading.hide();

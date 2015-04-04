@@ -3,11 +3,14 @@
 	<ion-content>
 		<label class="item item-input">
 			<span class="input-label">Set rating:</span>
-			<input type="text" ng-model="dish.rating">
+			<!-- <input type="text" ng-model="dish.rating"> -->
 		</label>
-		<button ng-click="setRating()" class="button">
- 		 Submit
-		</button>
+		<div class="stars">
+			<span ng-repeat="star in stars"
+					class="star"
+					ng-click="setStars($index)"
+					ng-class="{active: ($index+1) <= starsRate }"></span>
+		</div>
 	</ion-content>
 
 </ion-view>

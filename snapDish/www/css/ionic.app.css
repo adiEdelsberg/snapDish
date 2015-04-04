@@ -7602,3 +7602,23 @@ a.button {
     cursor: pointer; }
     .login .facebook-btn img {
       width: inherit; }
+
+.stars {
+  padding: 10px; }
+  .stars .star {
+    width: 25px;
+    height: 25px;
+    border: 1px solid #b4b4b4;
+    display: inline-block;
+    margin: 0 5px;
+    -webkit-border-radius: 50%;
+    border-radius: 50%; }
+    .stars .star.active {
+      background: pink;
+      width: 30px;
+      height: 30px; }
+
+.popup-container .popup {
+  background-color: rgba(171, 218, 255, 0.9); }
+.popup-container .popup-body {
+  overflow: hidden; }
