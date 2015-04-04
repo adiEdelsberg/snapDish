@@ -22,7 +22,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 .login{
 	background: url('../images/login-bg.jpg') no-repeat center center;
 	background-size: cover;
-	
+
 	.logo{
 		margin: 160px auto 0;
 		width: 210px;
@@ -30,7 +30,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 			width: inherit;
 		}
 	}
-	
+
 	.facebook-btn{
 		width: 290px;
 		margin: 96px auto 0;
@@ -38,5 +38,33 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 		img{
 			width: inherit;
 		}
+	}
+}
+
+.stars {
+	padding: 10px;
+
+	.star {
+		width: 25px;
+		height: 25px;
+		border: 1px solid rgb(180, 180, 180);
+		display: inline-block;
+		margin: 0 5px;
+		@include border-radius(50%);
+
+		&.active {
+			background: pink;
+			width: 30px;
+			height: 30px;
+		}
+	}
+}
+
+.popup-container {
+	.popup {
+		background-color: rgba(171, 218, 255, 0.9);
+	}
+	.popup-body {
+		overflow: hidden;
 	}
 }

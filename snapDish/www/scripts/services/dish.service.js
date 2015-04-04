@@ -15,10 +15,10 @@ angular.module('app')
        */
       setRating: function(dishId, rating) {
 
-        return server.setRating(dishId, rating); 
+        return server.setRating(dishId, rating);
 
       }
-      
+
     }
 
 
