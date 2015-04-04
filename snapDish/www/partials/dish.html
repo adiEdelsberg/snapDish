@@ -11,6 +11,8 @@
 					ng-click="setStars($index)"
 					ng-class="{active: ($index+1) <= starsRate }"></span>
 		</div>
-	</ion-content>
-
+	</ion-content>dish
+	<button ui-sref="new_dish_image({dishId: dish.ID})" ui-sref="" class="bar bar-footer bar-balanced">
+		<div class="title">Add New Image</div>
+	</button>
 </ion-view>
