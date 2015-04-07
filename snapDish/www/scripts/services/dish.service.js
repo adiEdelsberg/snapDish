@@ -7,6 +7,12 @@ angular.module('app')
 
     var methods = {
 
+      getCurrentDish: function() {
+
+        return currentDish;
+
+      },
+
       /**
        * Get dishes by restaurant id
        *
@@ -20,11 +26,11 @@ angular.module('app')
       },
 
 
-      addDishImage: function(dish) {
+      setDishImage: function(dish) {
 
         var deferred = $q.defer();
 
-          server.addDishImage(dish).then(function(response) {
+          server.setDishImage(dish).then(function(response) {
 
             deferred.resolve(response);
 
@@ -48,6 +54,8 @@ angular.module('app')
         var deferred = $q.defer();
 
           server.getDish(dishId).then(function(response){
+
+            currentDish = response.data;
 
             deferred.resolve(response.data);
 

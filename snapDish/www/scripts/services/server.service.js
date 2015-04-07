@@ -110,13 +110,12 @@ angular.module('app')
        *
        * @param {Number} id
        */
-      addDishImage: function(dish) {
+      setDishImage: function(dish) {
 
         var data = {
-          command: "add_dish_image",
+          command: "set_dish_image",
           image: dish.image,
-          id: dish.id,
-          restaurant: dish.restaurant
+          id: dish.id
         };
 
         return restCall(endpoints.MGR, data, 'POST');
