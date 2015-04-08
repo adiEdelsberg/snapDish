@@ -1,5 +1,5 @@
-<ion-view title="Dish">
-
+<ion-view>
+	<ion-nav-title>{{dish.name}}</ion-nav-title>
 	<ion-content>
 		<label class="item item-input">
 			<span class="input-label">Set rating:</span>
@@ -11,8 +11,11 @@
 					ng-click="setStars($index)"
 					ng-class="{active: ($index+1) <= starsRate }"></span>
 		</div>
-	</ion-content>dish
-	<button ui-sref="new_dish_image({dishId: dish.ID})" ui-sref="" class="bar bar-footer bar-balanced">
+		<div ng-repeat="image in dish.images track by $index">
+			<img class="full-image" ng-src="{{image}}">
+		</div>
+	</ion-content>
+	<button ui-sref="new_photo({dishId: dish.ID})" class="bar bar-footer bar-balanced">
 		<div class="title">Add New Image</div>
 	</button>
 </ion-view>

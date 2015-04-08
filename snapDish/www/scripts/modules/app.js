@@ -41,9 +41,9 @@ $stateProvider.state('new_dish', {
   controller: 'NewDishCtrl'
 })
 
-$stateProvider.state('new_dish_image', {
-  url: '/new_dish_image/:dishId',
-  templateUrl: 'partials/new_dish_image.html',
+$stateProvider.state('new_photo', {
+  url: '/new_photo/:dishId',
+  templateUrl: 'partials/new_photo.html',
   controller: 'NewDishCtrl'
 })
 
