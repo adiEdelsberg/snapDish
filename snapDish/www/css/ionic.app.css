@@ -7622,3 +7622,21 @@ a.button {
   background-color: rgba(171, 218, 255, 0.9); }
 .popup-container .popup-body {
   overflow: hidden; }
+
+.search-resturant {
+  width: 30%;
+  left: 50%;
+  margin-left: -15%;
+  background: transparent; }
+
+.resturant-content {
+  background-color: #e6e7e6; }
+  .resturant-content .dish-list .dish-item {
+    padding: 0;
+    margin: 5px;
+    border-color: #b8bbbd;
+    background-color: white; }
+    .resturant-content .dish-list .dish-item .dish-image {
+      width: 33.333%;
+      height: 33.333%;
+      padding: 5px; }

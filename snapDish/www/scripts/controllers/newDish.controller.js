@@ -17,10 +17,10 @@ angular.module('app')
 					sourceType : optionSourchType,
 					allowEdit : true,
 					encodingType: Camera.EncodingType.JPEG,
-					targetWidth: 300,
-					targetHeight: 300,
+					targetWidth: 100,
+					targetHeight: 100,
 					popoverOptions: CameraPopoverOptions,
-					saveToPhotoAlbum: false
+					saveToPhotoAlbum: true
 				};
 
 				$cordovaCamera.getPicture(options).then(function(imageData) {

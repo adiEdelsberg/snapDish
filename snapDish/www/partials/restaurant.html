@@ -1,15 +1,15 @@
 <ion-view>
-	<ion-nav-title>{{restaurant.name}}</ion-nav-title>
-	<ion-content class="has-footer">
-		<label class="item item-input">
+	<ion-nav-title>
+		<label class="item item-input search-resturant">
 			<i class="icon ion-search placeholder-icon"></i>
 			<input type="text" placeholder="Search" ng-model="dishQuery" ng-change="setList(dishQuery)">
 		</label>
-		<ion-list>
-			<ion-item class="item-avatar" ng-repeat="dish in restaurant.dishes | filter: search" ui-sref="dish({dishId: dish.ID})">
-				<img ng-src="{{dish.URL}}">
-				<h2>{{dish.NAME}}</h2>
-				<p>{{dish.RATING}}</p>
+	</ion-nav-title>
+	<ion-content class="has-footer resturant-content">
+		<ion-list class="dish-list">
+			<ion-item class="dish-item" ng-repeat="dish in restaurant.dishes | filter: search">
+				<h2>{{dish.NAME}} | {{dish.RATING}}</h2>
+				<img ng-src="{{dish.URL}}" ng-repeat="image in dishImages" class="dish-image">
 			</ion-item>
 		</ion-list>
 	</ion-content>

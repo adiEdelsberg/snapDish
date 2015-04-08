@@ -2,6 +2,7 @@ angular.module('app')
 
 .controller('RestaurantCtrl', ['$scope', '$stateParams', '$ionicLoading', 'restaurant',
 function($scope, $stateParams, $ionicLoading, restaurant) {
+	$scope.dishImages = [0,1,2];
 
 	$ionicLoading.show({
 		template: '<i class="ion-loading-c"></i><br/>Loading dishes...'
