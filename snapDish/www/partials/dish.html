@@ -1,15 +1,14 @@
 <ion-view>
 	<ion-nav-title>{{dish.name}}</ion-nav-title>
-	<ion-content>
+	<ion-content class="dish-content">
 		<label class="item item-input">
 			<span class="input-label">Set rating:</span>
 			<!-- <input type="text" ng-model="dish.rating"> -->
 		</label>
 		<div class="stars">
 			<span ng-repeat="star in stars"
-					class="star"
 					ng-click="setStars($index)"
-					ng-class="{active: ($index+1) <= starsRate }">
+					ng-class="{'ion-ios-star': ($index+1) <= starsRate, 'ion-ios-star-outline': ($index+1) > starsRate }">
 			</span>
 		</div>
 		<div ng-repeat="image in dish.images track by $index">

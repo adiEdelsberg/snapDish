@@ -13,7 +13,7 @@ angular.module('app')
 
 				$scope.dish = data;
 
-				$scope.starsRate = $scope.dish.rating;
+				$scope.starsRate = $scope.dish.rating || 0;
 
 			},function(error){
 
@@ -36,6 +36,7 @@ angular.module('app')
 			}
 
 			$scope.setStars = function(rate) {
+				console.log(rate);
 
 				$scope.starsRate = rate+1;
 

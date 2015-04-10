@@ -7705,6 +7705,8 @@ a.button {
         left: 12px;
         top: 3px;
         color: #fff; }
+  #snapDishApp .dish-content .stars {
+    font-size: 50px; }
   #snapDishApp .resturant-content {
     background-color: #e6e7e6; }
     #snapDishApp .resturant-content .sort-by {

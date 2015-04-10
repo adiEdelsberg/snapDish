@@ -13,7 +13,6 @@
 					<h2 class="dish-name"> | {{dish.NAME}}</h2>
 					<div class="stars">
 						<span ng-repeat="star in stars"
-								ng-click="setStars($index)"
 								ng-class="{'ion-ios-star': ($index+1) <= dish.RATING, 'ion-ios-star-outline': ($index+1) > dish.RATING }">
 						</span>
 					</div>
