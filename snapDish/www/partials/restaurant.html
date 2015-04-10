@@ -8,7 +8,7 @@
 	<ion-content class="resturant-content">
 		<div class="sort-by">sort by | name</div>
 		<ion-list class="dish-list">
-			<ion-item class="dish-item" ng-repeat="dish in restaurant.dishes | filter: search">
+			<ion-item class="dish-item" ng-repeat="dish in restaurant.dishes | filter: search" ui-sref="dish({dishId: dish.ID})">
 				<div class="dish-title">
 					<h2 class="dish-name"> | {{dish.NAME}}</h2>
 					<div class="stars">
