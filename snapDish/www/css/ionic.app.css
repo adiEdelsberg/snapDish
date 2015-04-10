@@ -7714,6 +7714,8 @@ a.button {
       margin: 5px;
       border-color: #b8bbbd;
       background-color: white; }
+      #snapDishApp .resturant-content .dish-list .dish-item .item-content {
+        padding: 0; }
       #snapDishApp .resturant-content .dish-list .dish-item .dish-image {
         width: 45%;
         height: 45%;

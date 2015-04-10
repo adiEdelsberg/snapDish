@@ -201,6 +201,10 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 				border-color: rgb(184, 187, 189);
 				background-color: white;
 
+				.item-content {
+					padding: 0;
+				}
+
 				.dish-image {
 					width: 45%;
 					height: 45%;
