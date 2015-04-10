@@ -17,8 +17,8 @@ angular.module('app')
 					sourceType : optionSourchType,
 					allowEdit : true,
 					encodingType: Camera.EncodingType.JPEG,
-					targetWidth: 100,
-					targetHeight: 100,
+					targetWidth: 300,
+					targetHeight: 300,
 					popoverOptions: CameraPopoverOptions,
 					saveToPhotoAlbum: true
 				};

@@ -9,7 +9,8 @@
 			<span ng-repeat="star in stars"
 					class="star"
 					ng-click="setStars($index)"
-					ng-class="{active: ($index+1) <= starsRate }"></span>
+					ng-class="{active: ($index+1) <= starsRate }">
+			</span>
 		</div>
 		<div ng-repeat="image in dish.images track by $index">
 			<img class="full-image" ng-src="{{image}}">

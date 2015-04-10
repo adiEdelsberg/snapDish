@@ -1,8 +1,12 @@
 angular.module('app')
 
-.controller('MainCtrl', ['$rootScope', '$location', '$ionicLoading',
-function($rootScope, $location ,$ionicLoading) {
+.controller('MainCtrl', ['$scope', '$rootScope', '$location', '$ionicLoading',
+function($scope, $rootScope, $location ,$ionicLoading) {
+	$scope.stars = [{},{},{},{},{}];
 
+	$scope.buttonMenu = function () {
+		alert('menu')
+	};
 /*	$rootScope.$on("$locationChangeSuccess", function() {
 
 	});*/

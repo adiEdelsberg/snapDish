@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
 
-	<title>SnapDish</title> 
+	<title>SnapDish</title>
 
 	<!-- ionicons cdn -->
 	<link rel="stylesheet" type="text/css" media="screen" href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css" />
@@ -48,14 +48,19 @@
 
   </head>
 
-  <body ng-app="app" ng-controller="MainCtrl">
-	<ion-nav-view>
-<ion-nav-bar>
-  <ion-nav-back-button class="button-clear">
-	<i class="ion-arrow-left-c"></i> Back
-		</ion-nav-back-button>
-	</ion-nav-bar>
-	</ion-nav-view>
-  </body>
+	<body ng-app="app" ng-controller="MainCtrl" id="snapDishApp">
+		<ion-nav-view>
+			<ion-nav-bar>
+				<ion-nav-back-button >
+					<i class="ion-arrow-left-b"></i>
+					<i class="logo-back"></i>
+				</ion-nav-back-button>
+			</ion-nav-bar>
+			<button class="menu-snap-dish" ng-click="buttonMenu()">
+				<i class="ion-navicon-round"></i>
+			</button>
+<!-- 			<img src="../images/menu.png" > -->
+		</ion-nav-view>
+	</body>
 
 </html>

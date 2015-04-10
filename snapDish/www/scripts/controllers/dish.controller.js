@@ -7,7 +7,7 @@ angular.module('app')
 
 		function init(){
 
-			$scope.stars = [{},{},{},{},{}];
+			//$scope.stars = [{},{},{},{},{}];
 
 			$scope.dish = dish.getDish($stateParams.dishId).then(function(data){
 

@@ -19,82 +19,216 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
-.login{
-	background: url('../images/login-bg.jpg') no-repeat center center;
-	background-size: cover;
+#snapDishApp {
+	.login{
+		background: url('../images/login-bg.jpg') no-repeat center center;
+		background-size: cover;
 
-	.logo{
-		margin: 160px auto 0;
-		width: 210px;
-		img{
-			width: inherit;
+		.logo{
+			margin: 160px auto 0;
+			width: 210px;
+			img{
+				width: inherit;
+			}
+		}
+
+		.facebook-btn{
+			width: 290px;
+			margin: 96px auto 0;
+			cursor: pointer;
+
+			img{
+				width: inherit;
+			}
 		}
 	}
 
-	.facebook-btn{
-		width: 290px;
-		margin: 96px auto 0;
-		cursor: pointer;
-		img{
-			width: inherit;
-		}
-	}
-}
+	.back-button {
+		background: transparent;
+		border: 0;
+		padding-right: 50px;
 
-.stars {
-	padding: 10px;
-
-	.star {
-		width: 25px;
-		height: 25px;
-		border: 1px solid rgb(180, 180, 180);
-		display: inline-block;
-		margin: 0 5px;
-		@include border-radius(50%);
-
-		&.active {
-			background: pink;
-			width: 30px;
-			height: 30px;
-		}
-	}
-}
-
-.popup-container {
-	.popup {
-		background-color: rgba(171, 218, 255, 0.9);
-	}
-	.popup-body {
-		overflow: hidden;
-	}
-}
-
-.search-resturant {
-	width: 30%;
-	left: 50%;
-	margin-left: -15%;
-	background: transparent;
-}
-
-.resturant-content {
-	background-color: rgb(230, 231, 230);
-
-	.dish-list {
-		.list{
-			//padding: 5px;
+		.back-text {
+			display: none;
 		}
 
-		.dish-item {
-			padding: 0;
-			margin: 5px;
-			border-color: rgb(184, 187, 189);
-			background-color: white;
+		.ion-arrow-left-b {
+			color: white;
+			font-size: 20px;
+		}
+	}
 
-			.dish-image {
-				width: 33.333%;
-				height: 33.333%;
-				padding: 5px;
+	.nav-bar-block {
+		.bar-header {
+			background: rgb(255,51,102);
+		}
+	}
+
+	.logo-back {
+		position: absolute;
+		background: url('../images/logo.png') no-repeat center center;
+		background-size: cover;
+		width: 37px;
+		height: 22px;
+		top: 5px;
+		left: 20px;
+	}
+
+	.menu-snap-dish {
+		position: absolute;
+		z-index: 99;
+		top: 5px;
+		right: 3px;
+		background: transparent;
+		border: 0;
+		font-size: 25px;
+		color: #fff;
+	}
+
+/* 	.stars {
+		padding: 10px;
+		color: rgb(240, 3, 76);
+
+		.star {
+			width: 25px;
+			height: 25px;
+			border: 1px solid rgb(180, 180, 180);
+			display: inline-block;
+			margin: 0 5px;
+			@include border-radius(50%);
+
+			&.active {
+				background: pink;
+				width: 30px;
+				height: 30px;
+			}
+		}
+	} */
+
+	.popup-container {
+		.popup {
+			background-color: rgba(171, 218, 255, 0.9);
+		}
+		.popup-body {
+			overflow: hidden;
+		}
+	}
+
+	.search-resturant {
+		width: 92%;
+		margin-left: 5px;
+		background: transparent;
+		border: 0;
+
+		i {
+			color: #f5fdff;
+			font-size: 18px;
+
+			&:after {
+				position: absolute;
+				left: 10px;
+				top: 35px;
+				content: '';
+				width: calc(100% - 20px);
+				height: 1px;
+				background: #fcfffd;
+				opacity: 0.5;
+			}
+		}
+
+		&:before,
+		&:after {
+			position: absolute;
+			left: 10px;
+			top: 30px;
+			content: '';
+			width: 1px;
+			height: 5px;
+			background: #fcfffd;
+			opacity: 0.5;
+		}
+
+		&:after {
+			left: initial;
+			right: 10px;
+		}
+
+
+	}
+
+	.snap-footer {
+		position: absolute;
+		width: 100%;
+		height: 30px;
+		background: rgba(246, 247, 249, 0.8);
+		bottom: 0px;
+
+		.button-add-dish {
+			background: rgb(255,51,102);
+			width: 50px;
+			height: 50px;
+			bottom: 3px;
+			left: 50%;
+			margin-left: -15px;
+			border: 2px solid #f8f9f4;
+			@include border-radius(50%);
+
+			i {
+				font-size: 30px;
+				position: absolute;
+				left: 12px;
+				top: 3px;
+				color: #fff;
+			}
+		}
+	}
+
+	.resturant-content {
+		background-color: rgb(230, 231, 230);
+
+		.sort-by {
+			padding-left: 10px;
+		}
+
+		.dish-list {
+			.list{
+				//padding: 5px;
+			}
+
+			.dish-item {
+				padding: 0;
+				margin: 5px;
+				border-color: rgb(184, 187, 189);
+				background-color: white;
+
+				.dish-image {
+					width: 45%;
+					height: 45%;
+					margin: 5px;
+					border: 1px solid #b8bbbd;
+
+					&:first-of-type {
+						margin-left: 0;
+					}
+				}
+
+				.dish-title {
+					position: relative;
+
+					.dish-name {
+						color: rgb(72, 72, 73);
+						padding : 5px;
+					}
+
+					.stars {
+						position: absolute;
+						right: 10px;
+						top: 8px;
+						color: rgb(255,51,102);
+					}
+				}
 			}
 		}
 	}
 }
+
