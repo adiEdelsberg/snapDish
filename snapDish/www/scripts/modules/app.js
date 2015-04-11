@@ -53,6 +53,6 @@ $stateProvider.state('dish', {
   controller: 'DishCtrl'
 })
 
-$urlRouterProvider.otherwise('/restaurants');
+$urlRouterProvider.otherwise('/login');
 
 }])
