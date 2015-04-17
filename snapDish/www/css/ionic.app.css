@@ -7588,150 +7588,168 @@ a.button {
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
 
-#snapDishApp {
-  /* 	.stars {
-		padding: 10px;
-		color: rgb(240, 3, 76);
-
-		.star {
-			width: 25px;
-			height: 25px;
-			border: 1px solid rgb(180, 180, 180);
-			display: inline-block;
-			margin: 0 5px;
-			@include border-radius(50%);
-
-			&.active {
-				background: pink;
-				width: 30px;
-				height: 30px;
-			}
-		}
-	} */ }
-  #snapDishApp .login {
-    background: url('../images/login-bg.jpg') no-repeat center center;
-    background-size: cover; }
-    #snapDishApp .login .logo {
-      margin: 160px auto 0;
-      width: 210px; }
-      #snapDishApp .login .logo img {
-        width: inherit; }
-    #snapDishApp .login .facebook-btn {
-      width: 290px;
-      margin: 96px auto 0;
-      cursor: pointer; }
-      #snapDishApp .login .facebook-btn img {
-        width: inherit; }
-  #snapDishApp .back-button {
-    background: transparent;
-    border: 0;
-    padding-right: 50px; }
-    #snapDishApp .back-button .back-text {
-      display: none; }
-    #snapDishApp .back-button .ion-arrow-left-b {
-      color: white;
-      font-size: 20px; }
-  #snapDishApp .nav-bar-block .bar-header {
-    background: #ff3366; }
-  #snapDishApp .logo-back {
-    position: absolute;
-    background: url('../images/logo.png') no-repeat center center;
-    background-size: cover;
-    width: 37px;
-    height: 22px;
-    top: 5px;
-    left: 20px; }
-  #snapDishApp .menu-snap-dish {
-    position: absolute;
-    z-index: 99;
-    top: 5px;
-    right: 3px;
-    background: transparent;
-    border: 0;
-    font-size: 25px;
-    color: #fff; }
-  #snapDishApp .popup-container .popup {
-    background-color: rgba(171, 218, 255, 0.9); }
-  #snapDishApp .popup-container .popup-body {
-    overflow: hidden; }
-  #snapDishApp .search-resturant {
-    width: 92%;
-    margin-left: 5px;
-    background: transparent;
-    border: 0; }
-    #snapDishApp .search-resturant i {
-      color: #f5fdff;
-      font-size: 18px; }
-      #snapDishApp .search-resturant i:after {
-        position: absolute;
-        left: 10px;
-        top: 35px;
-        content: '';
-        width: calc(100% - 20px);
-        height: 1px;
-        background: #fcfffd;
-        opacity: 0.5; }
-    #snapDishApp .search-resturant:before, #snapDishApp .search-resturant:after {
+#snapDishApp .login {
+  background: url('../images/login-bg.jpg') no-repeat center center;
+  background-size: cover; }
+  #snapDishApp .login .logo {
+    margin: 160px auto 0;
+    width: 210px; }
+    #snapDishApp .login .logo img {
+      width: inherit; }
+  #snapDishApp .login .facebook-btn {
+    width: 290px;
+    margin: 96px auto 0;
+    cursor: pointer; }
+    #snapDishApp .login .facebook-btn img {
+      width: inherit; }
+#snapDishApp .back-button {
+  background: transparent;
+  border: 0;
+  padding-right: 50px; }
+  #snapDishApp .back-button .back-text {
+    display: none; }
+  #snapDishApp .back-button .ion-arrow-left-b {
+    color: white;
+    font-size: 20px; }
+#snapDishApp .nav-bar-block .bar-header {
+  background: #ff3366; }
+#snapDishApp .logo-back {
+  position: absolute;
+  background: url('../images/logo.png') no-repeat center center;
+  background-size: cover;
+  width: 37px;
+  height: 22px;
+  top: 5px;
+  left: 20px; }
+#snapDishApp .menu-snap-dish {
+  position: absolute;
+  z-index: 99;
+  top: 5px;
+  right: 3px;
+  background: transparent;
+  border: 0;
+  font-size: 25px;
+  color: #fff; }
+#snapDishApp .stars {
+  color: #ff3366; }
+#snapDishApp .popup-container .popup {
+  background-color: rgba(171, 218, 255, 0.9); }
+#snapDishApp .popup-container .popup-body {
+  overflow: hidden; }
+#snapDishApp .search-resturant {
+  width: 92%;
+  margin-left: 5px;
+  background: transparent;
+  border: 0; }
+  #snapDishApp .search-resturant i {
+    color: #f5fdff;
+    font-size: 18px; }
+    #snapDishApp .search-resturant i:after {
       position: absolute;
       left: 10px;
-      top: 30px;
+      top: 35px;
       content: '';
-      width: 1px;
-      height: 5px;
+      width: calc(100% - 20px);
+      height: 1px;
       background: #fcfffd;
       opacity: 0.5; }
-    #snapDishApp .search-resturant:after {
-      left: initial;
-      right: 10px; }
-  #snapDishApp .snap-footer {
+  #snapDishApp .search-resturant:before, #snapDishApp .search-resturant:after {
     position: absolute;
-    width: 100%;
-    height: 30px;
-    background: rgba(246, 247, 249, 0.8);
-    bottom: 0px; }
-    #snapDishApp .snap-footer .button-add-dish {
-      background: #ff3366;
-      width: 50px;
-      height: 50px;
-      bottom: 3px;
-      left: 50%;
-      margin-left: -15px;
-      border: 2px solid #f8f9f4;
-      -webkit-border-radius: 50%;
-      border-radius: 50%; }
-      #snapDishApp .snap-footer .button-add-dish i {
-        font-size: 30px;
-        position: absolute;
-        left: 12px;
-        top: 3px;
-        color: #fff; }
-  #snapDishApp .dish-content .stars {
-    font-size: 50px; }
-  #snapDishApp .resturant-content {
-    background-color: #e6e7e6; }
-    #snapDishApp .resturant-content .sort-by {
-      padding-left: 10px; }
-    #snapDishApp .resturant-content .dish-list .dish-item {
-      padding: 0;
+    left: 10px;
+    top: 30px;
+    content: '';
+    width: 1px;
+    height: 5px;
+    background: #fcfffd;
+    opacity: 0.5; }
+  #snapDishApp .search-resturant:after {
+    left: initial;
+    right: 10px; }
+#snapDishApp .snap-footer {
+  position: absolute;
+  z-index: 999;
+  width: 100%;
+  height: 30px;
+  background: rgba(246, 247, 249, 0.8);
+  bottom: 0px; }
+  #snapDishApp .snap-footer .button-add-dish {
+    background: #ff3366;
+    width: 50px;
+    height: 50px;
+    bottom: 3px;
+    left: 50%;
+    margin-left: -15px;
+    border: 2px solid #f8f9f4;
+    -webkit-border-radius: 50%;
+    border-radius: 50%; }
+    #snapDishApp .snap-footer .button-add-dish i {
+      font-size: 30px;
+      position: absolute;
+      left: 12px;
+      top: 3px;
+      color: #fff; }
+#snapDishApp .resturant-content {
+  background-color: #e6e7e6; }
+  #snapDishApp .resturant-content .sort-by {
+    padding-left: 10px; }
+  #snapDishApp .resturant-content .dish-list .dish-item {
+    padding: 0;
+    margin: 5px;
+    border-color: #b8bbbd;
+    background-color: white; }
+    #snapDishApp .resturant-content .dish-list .dish-item .item-content {
+      padding: 0; }
+    #snapDishApp .resturant-content .dish-list .dish-item .dish-image {
+      width: 45%;
+      height: 45%;
       margin: 5px;
-      border-color: #b8bbbd;
-      background-color: white; }
-      #snapDishApp .resturant-content .dish-list .dish-item .item-content {
-        padding: 0; }
-      #snapDishApp .resturant-content .dish-list .dish-item .dish-image {
-        width: 45%;
-        height: 45%;
-        margin: 5px;
-        border: 1px solid #b8bbbd; }
-        #snapDishApp .resturant-content .dish-list .dish-item .dish-image:first-of-type {
-          margin-left: 0; }
-      #snapDishApp .resturant-content .dish-list .dish-item .dish-title {
-        position: relative; }
-        #snapDishApp .resturant-content .dish-list .dish-item .dish-title .dish-name {
-          color: #484849;
-          padding: 5px; }
-        #snapDishApp .resturant-content .dish-list .dish-item .dish-title .stars {
-          position: absolute;
-          right: 10px;
-          top: 8px;
-          color: #ff3366; }
+      border: 1px solid #b8bbbd; }
+      #snapDishApp .resturant-content .dish-list .dish-item .dish-image:first-of-type {
+        margin-left: 0; }
+    #snapDishApp .resturant-content .dish-list .dish-item .dish-title {
+      position: relative; }
+      #snapDishApp .resturant-content .dish-list .dish-item .dish-title .dish-name {
+        color: #484849;
+        padding: 5px; }
+      #snapDishApp .resturant-content .dish-list .dish-item .dish-title .stars {
+        position: absolute;
+        right: 10px;
+        top: 8px; }
+#snapDishApp .dish .dish-footer {
+  position: absolute;
+  bottom: 115px;
+  width: 100%; }
+  #snapDishApp .dish .dish-footer .stars {
+    position: absolute;
+    left: 50%;
+    margin-left: -137px;
+    font-size: 50px;
+    z-index: 999; }
+#snapDishApp .dish .dish-content {
+  background: #e7e8ed; }
+  #snapDishApp .dish .dish-content .dish-inner {
+    height: 100%;
+    margin: 5px;
+    border: 1px solid #babbbf;
+    background: #fff; }
+#snapDishApp .dish .dish-wrapper {
+  border: 3px solid #fff; }
+  #snapDishApp .dish .dish-wrapper .dish-f {
+    width: 100%;
+    height: 300px;
+    background-color: red;
+    border: 1px solid #c7cbcc;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%; }
+    #snapDishApp .dish .dish-wrapper .dish-f .like {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      width: 40px;
+      height: 40px;
+      background: url('../images/heart_full.png') no-repeat center center;
+      background-size: cover; }
+      #snapDishApp .dish .dish-wrapper .dish-f .like.active {
+        background: url('../images/heart_empty.png') no-repeat center center;
+        background-size: cover; }

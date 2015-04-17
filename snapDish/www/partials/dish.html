@@ -1,21 +1,30 @@
-<ion-view>
+<ion-view class="dish">
 	<ion-nav-title>{{dish.name}}</ion-nav-title>
-	<ion-content class="dish-content">
-		<label class="item item-input">
-			<span class="input-label">Set rating:</span>
-			<!-- <input type="text" ng-model="dish.rating"> -->
-		</label>
+	<ion-content class="dish-content" scroll="false">
+		<div class="dish-inner">
+			<ion-slide-box on-slide-changed="slideHasChanged($index)">
+				<ion-slide ng-repeat="image in dish.images track by $index">
+				<div class="dish-wrapper">
+					<div class="dish-f" style="background-image: url({{image}})">
+						<div class="like" ng-click="setLike(dish)" ng-class="{active: dish.like}"></div>
+					</div>
+				</div>
+				</ion-slide>
+			</ion-slide-box>
+			<span class="input-label">| {{name}}</span>
+		</div>
+	</ion-content>
+	<div class="dish-footer">
 		<div class="stars">
 			<span ng-repeat="star in stars"
 					ng-click="setStars($index)"
 					ng-class="{'ion-ios-star': ($index+1) <= starsRate, 'ion-ios-star-outline': ($index+1) > starsRate }">
 			</span>
 		</div>
-		<div ng-repeat="image in dish.images track by $index">
-			<img class="full-image" ng-src="{{image}}">
-		</div>
-	</ion-content>
-	<button ui-sref="new_photo({dishId: dish.ID})" class="bar bar-footer bar-balanced">
-		<div class="title">Add New Image</div>
-	</button>
+	</div>
+	<div class="snap-footer">
+		<button ui-sref="new_photo({dishId: dish.ID})" class="bar bar-footer button-add-dish">
+			<i class="ion-plus"></i>
+		</button>
+	</div>
 </ion-view>

@@ -1,7 +1,7 @@
 angular.module('app')
 
-.controller('DishCtrl', ['$scope', '$cordovaCamera', '$ionicPlatform', '$stateParams', '$ionicHistory', '$ionicPopup', 'server', 'dish',
-	function($scope, $cordovaCamera, $ionicPlatform, $stateParams, $ionicHistory, $ionicPopup, server, dish){
+.controller('DishCtrl', ['$scope', '$cordovaCamera', '$ionicPlatform', '$stateParams', '$ionicHistory', '$ionicPopup', '$ionicSlideBoxDelegate', 'server', 'dish',
+	function($scope, $cordovaCamera, $ionicPlatform, $stateParams, $ionicHistory, $ionicPopup, $ionicSlideBoxDelegate, server, dish){
 
 		var starsLastRate;
 
@@ -14,6 +14,8 @@ angular.module('app')
 				$scope.dish = data;
 
 				$scope.starsRate = $scope.dish.rating || 0;
+
+				$ionicSlideBoxDelegate.update();
 
 			},function(error){
 
@@ -34,6 +36,11 @@ angular.module('app')
 				dish.setRating($scope.dish.id, $scope.starsRate);
 
 			}
+
+			$scope.setLike = function(dish) {
+				dish.like = !dish.like;
+			}
+
 
 			$scope.setStars = function(rate) {
 				console.log(rate);
