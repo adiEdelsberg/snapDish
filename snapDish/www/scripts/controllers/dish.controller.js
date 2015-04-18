@@ -41,6 +41,9 @@ angular.module('app')
 				dish.like = !dish.like;
 			}
 
+			$scope.setFlag = function(dish) {
+				dish.flag = !dish.flag;
+			}
 
 			$scope.setStars = function(rate) {
 				console.log(rate);

@@ -5,7 +5,7 @@
 			<input type="text" ng-model="dishQuery" ng-change="setList(dishQuery)">
 		</label>
 	</ion-nav-title>
-	<ion-content class="resturant-content">
+	<ion-content class="snap-ion-content resturant-content">
 		<div class="sort-by">sort by | name</div>
 		<ion-list class="dish-list">
 			<ion-item class="dish-item" ng-repeat="dish in restaurant.dishes | filter: search" ui-sref="dish({dishId: dish.ID})">
@@ -23,7 +23,6 @@
 	</ion-content>
 	<div class="snap-footer">
 		<button ui-sref="new_dish({dishId: dish.ID})" class="bar bar-footer button-add-dish">
-			<i class="ion-plus"></i>
 		</button>
 	</div>
 </ion-view>
