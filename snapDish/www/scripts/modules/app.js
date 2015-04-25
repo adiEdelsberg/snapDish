@@ -21,6 +21,12 @@ $stateProvider.state('login', {
   controller: 'LoginCtrl'
 })
 
+$stateProvider.state('loginInBrowser', {
+  url: '/loginInBrowser',
+  templateUrl: 'partials/login.html',
+  controller: 'LoginInBrowserCtrl'
+})
+
 $stateProvider.state('restaurants', {
   url: '/restaurants',
   templateUrl: 'partials/restaurants.html',
@@ -51,6 +57,15 @@ $stateProvider.state('dish', {
   controller: 'DishCtrl'
 })
 
-$urlRouterProvider.otherwise('/login');
+//use facebookPlugin only when we're in cordova
+var runingInCordova = document.URL.indexOf( 'http://' ) === -1 && document.URL.indexOf( 'https://' ) === -1;
+if (runingInCordova) {
+    $urlRouterProvider.otherwise('/login');
+} else {
+    $urlRouterProvider.otherwise('/loginInBrowser');
+} 
+
+
+
 
 }])
