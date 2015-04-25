@@ -15,8 +15,6 @@ angular.module('app', ['ionic', 'ngCordova'])
 
 .config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
 
-openFB.init({appId: '1604369319786635'});
-
 $stateProvider.state('login', {
   url: '/login',
   templateUrl: 'partials/login.html',
@@ -53,6 +51,6 @@ $stateProvider.state('dish', {
   controller: 'DishCtrl'
 })
 
-$urlRouterProvider.otherwise('/restaurants');
+$urlRouterProvider.otherwise('/login');
 
 }])
