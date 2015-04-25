@@ -66,6 +66,4 @@ if (runingInCordova) {
 } 
 
 
-
-
 }])

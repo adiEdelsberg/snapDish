@@ -16,7 +16,8 @@ angular.module('app')
       setCurrentUser: function(user) {
 
         currentUser = user;
-
+      
+        console.log('current user is: ',currentUser)
       }
 
     }
