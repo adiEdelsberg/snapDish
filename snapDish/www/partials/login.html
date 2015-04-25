@@ -20,13 +20,13 @@
             <div class="event listening button" onclick="logout();">Logout with Facebook</div>
         </div>
 	-->	
-	<div class="facebook-btn" onclick="login()">
+	<div class="facebook-btn" ng-click="login()">
 		<img src="images/facebook-btn.png" />
 	</div>
 		
         <script type="text/javascript">
 
-	var login = function () {
+/*	var login = function () {
 		if (!window.cordova) {
 			var appId = prompt("Enter FB Application ID", "");
 			facebookConnectPlugin.browserInit("1625788814323152");
@@ -34,7 +34,7 @@
 		facebookConnectPlugin.login( ["email"],
 			function (response) { alert(JSON.stringify(response)) },
 			function (response) { alert(JSON.stringify(response)) });
-	}
+	}*/
 	
 	var showDialog = function () { 
 		facebookConnectPlugin.showDialog( { method: "feed" }, 
