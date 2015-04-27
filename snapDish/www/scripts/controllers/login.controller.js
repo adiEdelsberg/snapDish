@@ -1,8 +1,14 @@
 angular.module('app')
 
-.controller('LoginCtrl', ['$scope', '$state', '$ionicLoading', 'user', function($scope, $state, $ionicLoading, user) {
+.controller('LoginCtrl', ['$scope', '$timeout', '$ionicPlatform', '$timeout', '$state', '$ionicLoading', 'user', function($scope, $timeout, $ionicPlatform, $timeout, $state, $ionicLoading, user) {
 
-
+	$timeout(function() {		
+		facebookConnectPlugin.getLoginStatus(function(response) {
+			statusChangeCallback(response);
+		});
+	},100);	
+	
+ 
 	function statusChangeCallback(response) {
 
 		//console.log(response);
@@ -15,9 +21,9 @@ angular.module('app')
 		  testAPI();
 		} else if (response.status === 'not_authorized') {
 		  // The person is logged into Facebook, but not your app.
-		  alert('The person is logged into Facebook, but not your app');
+		  console.log('The person is logged into Facebook, but not your app');
 		} else {
-		  alert('The person is not logged into Facebook, so we\'re not sure if they are logged into this app or not.');
+		  console.log('The person is not logged into Facebook, so we\'re not sure if they are logged into this app or not.');
 		}
 	}
 

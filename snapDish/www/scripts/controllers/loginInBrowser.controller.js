@@ -45,6 +45,7 @@
     xfbml      : true,  // parse social plugins on this page
     version    : 'v2.3' // use version 2.2
   });
+    $scope.test = FB;
 
   // Now that we've initialized the JavaScript SDK, we call 
   // FB.getLoginStatus().  This function gets the state of the
@@ -82,7 +83,7 @@
       response.picture = 'http://graph.facebook.com/'+response.id+'/picture';
       
       user.setCurrentUser(response);
-    	$state.go('restaurants'); 
+    	//$state.go('restaurants'); 
 
     });
   }
