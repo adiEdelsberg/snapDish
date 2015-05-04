@@ -78,11 +78,12 @@ angular.module('app')
        *
        * @param {Number} id
        */
-      getDish: function(id) {
+      getDish: function(id, currentUserId) {
 
         var data = {
           command: "get_dish",
-          id: id
+          id: id,
+          currentUserId: currentUserId
         };
 
         return restCall(endpoints.MGR, data, 'POST');
@@ -126,12 +127,30 @@ angular.module('app')
        *
        * @param {Number} id
        */
-      setRating: function(dishId, rating) {
+      setRating: function(dishId, rating, userId) {
 
         var data = {
           command: "set_rating",
           dish_id: dishId,
-          rating: rating
+          rating: rating,
+          user_id: userId
+        };
+
+        return restCall(endpoints.MGR, data, 'POST');
+      },
+
+      /**
+       * Get restaurant's dishes by id
+       *
+       * @param {Number} id
+       */
+      setLike: function(dishPhotoId, userId, likedByCurrentUser) {
+
+        var data = {
+          command: "set_like",
+          dish_photo_id: dishPhotoId,
+          user_id: userId,
+          liked_by_current_user: likedByCurrentUser 
         };
 
         return restCall(endpoints.MGR, data, 'POST');

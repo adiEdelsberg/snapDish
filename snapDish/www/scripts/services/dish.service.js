@@ -7,6 +7,12 @@ angular.module('app')
 
     var methods = {
 
+      /**
+       * Get dishes by restaurant id
+       *
+       * @param {Number} restaurantId
+       * @return {Object} dishes list(Promise)
+       */
       getCurrentDish: function() {
 
         return currentDish;
@@ -19,13 +25,30 @@ angular.module('app')
        * @param {Number} restaurantId
        * @return {Object} dishes list(Promise)
        */
-      setRating: function(dishId, rating) {
+      setRating: function(dishId, rating, userId) {
 
-        return server.setRating(dishId, rating);
+        return server.setRating(dishId, rating, userId);
 
       },
 
+      /**
+       * Get dishes by restaurant id
+       *
+       * @param {Number} restaurantId
+       * @return {Object} dishes list(Promise)
+       */
+      setLike: function(dishPhotoId, userId, likedByCurrentUser) {
 
+        return server.setLike(dishPhotoId, userId, likedByCurrentUser);
+
+      },
+
+      /**
+       * Get dishes by restaurant id
+       *
+       * @param {Number} restaurantId
+       * @return {Object} dishes list(Promise)
+       */
       setDishImage: function(dish) {
 
         var deferred = $q.defer();
@@ -49,11 +72,11 @@ angular.module('app')
        * @param {Number} dishId
        * @return {Object} dish(Promise)
        */
-      getDish: function(dishId) {
+      getDish: function(dishId, currentUserId) {
 
         var deferred = $q.defer();
 
-          server.getDish(dishId).then(function(response){
+          server.getDish(dishId, currentUserId).then(function(response){
 
             currentDish = response.data;
 

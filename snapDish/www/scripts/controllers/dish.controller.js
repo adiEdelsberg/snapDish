@@ -1,15 +1,17 @@
 angular.module('app')
 
-.controller('DishCtrl', ['$scope', '$cordovaCamera', '$ionicPlatform', '$stateParams', '$ionicHistory', '$ionicPopup', '$ionicSlideBoxDelegate', 'server', 'dish',
-	function($scope, $cordovaCamera, $ionicPlatform, $stateParams, $ionicHistory, $ionicPopup, $ionicSlideBoxDelegate, server, dish){
+.controller('DishCtrl', ['$scope', '$cordovaCamera', '$ionicPlatform', '$stateParams', '$ionicHistory', '$ionicPopup', '$ionicSlideBoxDelegate', 'dish', 'user',
+	function($scope, $cordovaCamera, $ionicPlatform, $stateParams, $ionicHistory, $ionicPopup, $ionicSlideBoxDelegate, dish, user){
 
-		var starsLastRate;
+		var starsLastRate, currentUser;
 
 		function init(){
 
 			//$scope.stars = [{},{},{},{},{}];
 
-			$scope.dish = dish.getDish($stateParams.dishId).then(function(data){
+			currentUser = user.getCurrentUser();
+
+			$scope.dish = dish.getDish($stateParams.dishId, currentUser.id).then(function(data){console.log(data);
 
 				$scope.dish = data;
 
@@ -33,12 +35,16 @@ angular.module('app')
 
 				$ionicHistory.clearCache();
 
-				dish.setRating($scope.dish.id, $scope.starsRate);
+				dish.setRating($scope.dish.id, $scope.starsRate, currentUser.id);
 
 			}
 
-			$scope.setLike = function(dish) {
-				dish.like = !dish.like;
+			$scope.setLike = function(image) {
+
+				dish.setLike(image.photo_id, currentUser.id, image.liked_by_current_user).then(function(){
+					image.liked_by_current_user = !image.liked_by_current_user;	
+				});
+			
 			}
 
 			$scope.setFlag = function(dish) {
@@ -46,7 +52,6 @@ angular.module('app')
 			}
 
 			$scope.setStars = function(rate) {
-				console.log(rate);
 
 				$scope.starsRate = rate+1;
 
