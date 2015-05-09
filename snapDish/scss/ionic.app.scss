@@ -340,5 +340,124 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 			}
 		}
 	}
+
+	.add-dish-content {
+		font-size: 25px;
+
+		.view {
+			position: absolute;
+			top: 44px;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background: #e6e7e9;
+
+			li {
+				position: relative;
+				margin: 5px;
+				height: calc(25% - 18px);
+				background: #fff;
+
+				&:last-child {
+					background: #ff3366;
+				}
+			}
+
+			.snap,
+			.choose,
+			.or {
+				position: absolute;
+				left: 10%;
+				top: 50%;
+				margin-top: -5%;
+				width: 20%;
+				height: 35%;
+				border: 0;
+				background: url('../images/photo_popup_cam.png') no-repeat center center;
+				background-size: cover;
+			}
+
+			.choose {
+				left: initial;
+				right: 10%;
+				background: url('../images/photo_popup_gallery.png') no-repeat center center;
+				background-size: cover;
+			}
+
+			.or {
+				left: 50%;
+				right: initial;
+				margin-left: -5%;
+				margin-top: -10%;
+				width: 10%;
+				height: 10%;
+				background: url('../images/photo_popup_or.png') no-repeat center center;
+				background-size: cover;
+			}
+
+			.button-new-dish {
+				text-align: center;
+				border: 0;
+				background: transparent;
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				color: white;
+
+				span {
+					position: relative;
+					font-size: 25px;
+					top: 25px;
+					font-size: 25px;
+				}
+			}
+
+			.new-dish-name {
+				div {
+					font-size: 25px;
+					padding-top: 20px;
+					text-align: center;
+					width: 100%;
+					color: #768187;
+				}
+
+				label {
+					position: absolute;
+					bottom: 25px;
+					width: 80%;
+					left: 50%;
+					margin-left: -40%;
+					border-bottom: 1px solid #797d80;
+
+					&:before,
+					&:after {
+						position: absolute;
+						left: 0;
+						top: -10px;
+						content: '';
+						width: 1px;
+						height: 10px;
+						background: #797d80;
+					}
+
+					&:after {
+						left: initial;
+						right: 0;
+					}
+				}
+
+				input {
+					position: absolute;
+					bottom: 25px;
+					width: 80%;
+					left: 50%;
+					margin-left: -40%;
+				}
+
+			}
+		}
+	}
 }
 
