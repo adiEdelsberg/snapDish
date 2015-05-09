@@ -116,7 +116,7 @@ angular.module('app')
 			   	popup.then(function(report) {
 
 			     	if(report) {
-			     		dish.setReport(report, $scope.imageToReport.photo_id);
+			     		dish.setReport($scope.imageToReport.photo_id, currentUser.id, report);
 			     	} else {
 			       		console.log('Report was canceled');
 			     	}

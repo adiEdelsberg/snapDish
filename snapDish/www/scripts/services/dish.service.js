@@ -49,10 +49,10 @@ angular.module('app')
        * @param {Number} restaurantId
        * @return {Object} dishes list(Promise)
        */
-      setReport: function(report, dishPhotoId) {
+      setReport: function(dishPhotoId, userId, report) {
 
-        //return server.setLike(dishPhotoId, userId, likedByCurrentUser);
-        console.log(report, dishPhotoId);
+        return server.setReport(dishPhotoId, userId, report);
+        
       },
 
       /**

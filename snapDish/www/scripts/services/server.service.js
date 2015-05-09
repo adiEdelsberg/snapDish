@@ -154,6 +154,23 @@ angular.module('app')
         };
 
         return restCall(endpoints.MGR, data, 'POST');
+      },
+
+      /**
+       * Get restaurant's dishes by id
+       *
+       * @param {Number} id
+       */
+      setReport: function(dishPhotoId, userId, report) {
+
+        var data = {
+          command: "set_report",
+          dish_photo_id: dishPhotoId,
+          user_id: userId,
+          report: report 
+        };
+
+        return restCall(endpoints.MGR, data, 'POST');
       }
 
     }
