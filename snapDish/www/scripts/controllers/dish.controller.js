@@ -3,7 +3,7 @@ angular.module('app')
 .controller('DishCtrl', ['$scope', '$cordovaCamera', '$ionicPlatform', '$stateParams', '$ionicHistory', '$ionicPopup', '$ionicSlideBoxDelegate', 'dish', 'user',
 	function($scope, $cordovaCamera, $ionicPlatform, $stateParams, $ionicHistory, $ionicPopup, $ionicSlideBoxDelegate, dish, user){
 
-		var starsLastRate, currentUser;
+		var starsLastRate, currentUser, reportPopup;
 
 		function init(){
 
@@ -49,6 +49,80 @@ angular.module('app')
 
 			$scope.setFlag = function(dish) {
 				dish.flag = !dish.flag;
+			}
+
+			$scope.openReportPopup = function(image) {
+
+				$scope.imageToReport = image;
+
+				reportPopup = $ionicPopup.show({
+
+					templateUrl: 'partials/report_popup.html',
+    				title: 'Report User',
+    				subTitle: 'Please select one of the options',
+    				scope: $scope
+
+				});
+			}
+
+			$scope.setReport = function(reportType){
+
+				reportPopup.close();
+				showConfirm(reportType);
+
+			};
+
+			function showConfirm(reportType) {
+
+				var popup, template, subTitle; 
+
+				$scope.report = {
+					type : reportType,
+					text : ''
+				}; 
+
+				if(reportType == 'other'){
+
+					template = '<textarea ng-model="report.text"></textarea>';
+					subTitle =  'Describe this report(optional)';
+
+				}else{
+
+					template = 'Are you sure you want to report this user?';
+					subTitle = '';
+
+				}				
+
+				popup = $ionicPopup.show({
+
+			     	title: 'Confirm Report',
+			     	subTitle: subTitle,
+			     	template: template,
+			     	scope: $scope,
+			     	buttons: [
+				      { text: 'Cancel' },
+				      {
+				        text: 'OK',
+				        type: 'button-positive',
+				        onTap: function(e) {
+				         
+				        	return $scope.report;
+				          
+				        }
+				      }
+				    ]
+			   	});
+
+			   	popup.then(function(report) {
+
+			     	if(report) {
+			     		dish.setReport(report, $scope.imageToReport.photo_id);
+			     	} else {
+			       		console.log('Report was canceled');
+			     	}
+
+			   	});
+
 			}
 
 			$scope.setStars = function(rate) {

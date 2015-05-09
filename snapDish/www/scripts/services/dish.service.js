@@ -49,6 +49,18 @@ angular.module('app')
        * @param {Number} restaurantId
        * @return {Object} dishes list(Promise)
        */
+      setReport: function(report, dishPhotoId) {
+
+        //return server.setLike(dishPhotoId, userId, likedByCurrentUser);
+        console.log(report, dishPhotoId);
+      },
+
+      /**
+       * Get dishes by restaurant id
+       *
+       * @param {Number} restaurantId
+       * @return {Object} dishes list(Promise)
+       */
       setDishImage: function(dish) {
 
         var deferred = $q.defer();

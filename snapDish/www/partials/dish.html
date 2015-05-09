@@ -7,7 +7,7 @@
 				<div class="dish-wrapper">
 					<div class="dish-f" style="background-image: url({{image.url}})">
 						<div class="like" ng-click="setLike(image)" ng-class="{active: !image.liked_by_current_user}"><center>{{image.likes_count}}</center></div>
-						<div class="flag" ng-click="setFlag(dish)" ng-class="{active: dish.flag}"></div>
+						<div class="flag" ng-click="openReportPopup(image)" ng-class="{active: dish.flag}"></div>
 						<div class="facebook-user" ng-click="setFacebook(dish)">
 							<img src="http://graph.facebook.com/{{user.id}}/picture?width=270&height=270"/>
 						</div>
