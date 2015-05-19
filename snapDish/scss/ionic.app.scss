@@ -228,6 +228,38 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 		}
 	}
 
+	.snap,
+	.choose,
+	.or {
+		position: absolute;
+		left: 10%;
+		top: 50%;
+		margin-top: -5%;
+		width: 20%;
+		height: 35%;
+		border: 0;
+		background: url('../images/photo_popup_cam.png') no-repeat center center;
+		background-size: cover;
+	}
+
+	.choose {
+		left: initial;
+		right: 10%;
+		background: url('../images/photo_popup_gallery.png') no-repeat center center;
+		background-size: cover;
+	}
+
+	.or {
+		left: 50%;
+		right: initial;
+		margin-left: -5%;
+		margin-top: -10%;
+		width: 10%;
+		height: 10%;
+		background: url('../images/photo_popup_or.png') no-repeat center center;
+		background-size: cover;
+	}
+
 	.dish {
 		.dish-footer {
 			position: absolute;
@@ -318,6 +350,28 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 		}
 	}
 
+	.add-photo-menu {
+		position: absolute;
+		top: 0px;
+		bottom: 0px;
+		left: 0;
+		right: 0;
+		background: rgba(255, 255, 255, 0.5);
+		z-index: 999;
+
+		.add-photo-wrapper {
+			position: absolute;
+			top: 50%;
+			width: 80%;
+			height: 20%;
+			margin-top: -20%;
+			margin-left: 10%;
+			background: #fff;
+
+			@include box-shadow(#c9cacc 0px 0px 8px);
+		}
+	}
+
 	.restaurants-content {
 		.item-restaurant {
 			margin: 5px;
@@ -358,41 +412,17 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 				height: calc(25% - 18px);
 				background: #fff;
 
+				&.new-dish-name {
+					height: 10%;
+				}
+
+				&.new-dish-photo {
+					height: 40%;
+				}
+
 				&:last-child {
 					background: #ff3366;
 				}
-			}
-
-			.snap,
-			.choose,
-			.or {
-				position: absolute;
-				left: 10%;
-				top: 50%;
-				margin-top: -5%;
-				width: 20%;
-				height: 35%;
-				border: 0;
-				background: url('../images/photo_popup_cam.png') no-repeat center center;
-				background-size: cover;
-			}
-
-			.choose {
-				left: initial;
-				right: 10%;
-				background: url('../images/photo_popup_gallery.png') no-repeat center center;
-				background-size: cover;
-			}
-
-			.or {
-				left: 50%;
-				right: initial;
-				margin-left: -5%;
-				margin-top: -10%;
-				width: 10%;
-				height: 10%;
-				background: url('../images/photo_popup_or.png') no-repeat center center;
-				background-size: cover;
 			}
 
 			.button-new-dish {
@@ -425,7 +455,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 				label {
 					position: absolute;
-					bottom: 25px;
+					bottom: 10px;
 					width: 80%;
 					left: 50%;
 					margin-left: -40%;
@@ -450,7 +480,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 				input {
 					position: absolute;
-					bottom: 25px;
+					bottom: 2px;
 					width: 80%;
 					left: 50%;
 					margin-left: -40%;

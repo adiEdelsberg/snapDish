@@ -1,7 +1,7 @@
 angular.module('app')
 
-.controller('DishCtrl', ['$scope', '$cordovaCamera', '$ionicPlatform', '$stateParams', '$ionicHistory', '$ionicPopup', '$ionicSlideBoxDelegate', 'dish', 'user',
-	function($scope, $cordovaCamera, $ionicPlatform, $stateParams, $ionicHistory, $ionicPopup, $ionicSlideBoxDelegate, dish, user){
+.controller('DishCtrl', ['$scope', '$rootScope', '$cordovaCamera', '$ionicPlatform', '$stateParams', '$ionicHistory', '$ionicPopup', '$ionicSlideBoxDelegate', 'dish', 'user',
+	function($scope, $rootScope, $cordovaCamera, $ionicPlatform, $stateParams, $ionicHistory, $ionicPopup, $ionicSlideBoxDelegate, dish, user){
 
 		var starsLastRate, currentUser, reportPopup;
 
@@ -42,9 +42,9 @@ angular.module('app')
 			$scope.setLike = function(image) {
 
 				dish.setLike(image.photo_id, currentUser.id, image.liked_by_current_user).then(function(){
-					image.liked_by_current_user = !image.liked_by_current_user;	
+					image.liked_by_current_user = !image.liked_by_current_user;
 				});
-			
+
 			}
 
 			$scope.setFlag = function(dish) {
@@ -74,12 +74,12 @@ angular.module('app')
 
 			function showConfirm(reportType) {
 
-				var popup, template, subTitle; 
+				var popup, template, subTitle;
 
 				$scope.report = {
 					type : reportType,
 					text : ''
-				}; 
+				};
 
 				if(reportType == 'other'){
 
@@ -91,7 +91,7 @@ angular.module('app')
 					template = 'Are you sure you want to report this user?';
 					subTitle = '';
 
-				}				
+				}
 
 				popup = $ionicPopup.show({
 
@@ -105,9 +105,9 @@ angular.module('app')
 				        text: 'OK',
 				        type: 'button-positive',
 				        onTap: function(e) {
-				         
+
 				        	return $scope.report;
-				          
+
 				        }
 				      }
 				    ]
@@ -146,6 +146,43 @@ angular.module('app')
 					}
 
 				});
+			}
+
+			// NEW PHOTO SECTION
+
+			$scope.addNewPic = function addNewPic() {
+				$rootScope.showNavBar = false;
+			}
+
+			$scope.takePicture = function takePicture(userSourchType) {
+					$rootScope.showNavBar = true;
+					return;
+					dish.savePhoto(userSourchType);
+					$state.go('new_photo');
+/*				var optionSourchType = userSourchType === 'camera' ? Camera.PictureSourceType.CAMERA : Camera.PictureSourceType.PHOTOLIBRARY;
+
+				var options = {
+					quality : 100,
+					destinationType : Camera.DestinationType.DATA_URL,
+					sourceType : optionSourchType,
+					allowEdit : true,
+					encodingType: Camera.EncodingType.JPEG,
+					targetWidth: 300,
+					targetHeight: 300,
+					popoverOptions: CameraPopoverOptions,
+					saveToPhotoAlbum: true
+				};
+
+				$cordovaCamera.getPicture(options).then(function(imageData) {
+					dish.savePhoto("data:image/jpeg;base64," + imageData);
+					$state.go('new_photo');
+
+				}, function(error) {
+
+					alert(error);
+
+				});*/
+
 			}
 
 		});

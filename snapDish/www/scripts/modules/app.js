@@ -48,7 +48,7 @@ $stateProvider.state('new_dish', {
 $stateProvider.state('new_photo', {
   url: '/new_photo/:dishId',
   templateUrl: 'partials/new_photo.html',
-  controller: 'NewDishCtrl'
+  controller: 'NewPhotoCtrl'
 })
 
 $stateProvider.state('dish', {
@@ -63,7 +63,7 @@ if (runingInCordova) {
     $urlRouterProvider.otherwise('/login');
 } else {
     $urlRouterProvider.otherwise('/loginInBrowser');
-} 
+}
 
 
 }])

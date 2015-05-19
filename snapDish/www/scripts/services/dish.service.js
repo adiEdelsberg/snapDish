@@ -4,6 +4,7 @@ angular.module('app')
 
     //cached dish
     var currentDish;
+    var newPhoto = 'base64';
 
     var methods = {
 
@@ -52,7 +53,7 @@ angular.module('app')
       setReport: function(dishPhotoId, userId, report) {
 
         return server.setReport(dishPhotoId, userId, report);
-        
+
       },
 
       /**
@@ -102,6 +103,12 @@ angular.module('app')
 
         return deferred.promise;
 
+      },
+      savePhoto: function(photo) {
+        newPhoto = photo;
+      },
+      getPhoto: function() {
+        return newPhoto;
       }
 
 

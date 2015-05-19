@@ -28,7 +28,16 @@
 		</div>
 	</div>
 	<div class="snap-footer">
-		<button ui-sref="new_photo({dishId: dish.ID})" class="bar bar-footer button-add-image">
+<!-- 		<button ui-sref="new_photo({dishId: dish.ID})" class="bar bar-footer button-add-image">
+		</button> -->
+		<button ng-click="addNewPic()" class="bar bar-footer button-add-image">
 		</button>
 	</div>
 </ion-view>
+<div class="add-photo-menu" ng-hide="showNavBar">
+	<div class="add-photo-wrapper">
+		<a ng-click="takePicture('camera')" class="button snap"></a>
+		<a class="button or"></a>
+		<a ng-click="takePicture('library')" class="button choose"></a>
+	</div>
+</div>

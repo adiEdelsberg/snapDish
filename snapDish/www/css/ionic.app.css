@@ -7719,6 +7719,30 @@ a.button {
         position: absolute;
         right: 10px;
         top: 8px; }
+  #snapDishApp .snap, #snapDishApp .choose, #snapDishApp .or {
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    margin-top: -5%;
+    width: 20%;
+    height: 35%;
+    border: 0;
+    background: url('../images/photo_popup_cam.png') no-repeat center center;
+    background-size: cover; }
+  #snapDishApp .choose {
+    left: initial;
+    right: 10%;
+    background: url('../images/photo_popup_gallery.png') no-repeat center center;
+    background-size: cover; }
+  #snapDishApp .or {
+    left: 50%;
+    right: initial;
+    margin-left: -5%;
+    margin-top: -10%;
+    width: 10%;
+    height: 10%;
+    background: url('../images/photo_popup_or.png') no-repeat center center;
+    background-size: cover; }
   #snapDishApp .dish .dish-footer {
     position: absolute;
     bottom: 30px;
@@ -7780,6 +7804,24 @@ a.button {
         left: 10px;
         width: 30px;
         height: 30px; }
+  #snapDishApp .add-photo-menu {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.5);
+    z-index: 999; }
+    #snapDishApp .add-photo-menu .add-photo-wrapper {
+      position: absolute;
+      top: 50%;
+      width: 80%;
+      height: 20%;
+      margin-top: -20%;
+      margin-left: 10%;
+      background: #fff;
+      -webkit-box-shadow: #c9cacc 0px 0px 8px;
+      box-shadow: #c9cacc 0px 0px 8px; }
   #snapDishApp .restaurants-content .item-restaurant {
     margin: 5px;
     border: 1px solid #c6cbcf; }
@@ -7808,32 +7850,12 @@ a.button {
         margin: 5px;
         height: calc(25% - 18px);
         background: #fff; }
+        #snapDishApp .add-dish-content .view li.new-dish-name {
+          height: 10%; }
+        #snapDishApp .add-dish-content .view li.new-dish-photo {
+          height: 40%; }
         #snapDishApp .add-dish-content .view li:last-child {
           background: #ff3366; }
-      #snapDishApp .add-dish-content .view .snap, #snapDishApp .add-dish-content .view .choose, #snapDishApp .add-dish-content .view .or {
-        position: absolute;
-        left: 10%;
-        top: 50%;
-        margin-top: -5%;
-        width: 20%;
-        height: 35%;
-        border: 0;
-        background: url('../images/photo_popup_cam.png') no-repeat center center;
-        background-size: cover; }
-      #snapDishApp .add-dish-content .view .choose {
-        left: initial;
-        right: 10%;
-        background: url('../images/photo_popup_gallery.png') no-repeat center center;
-        background-size: cover; }
-      #snapDishApp .add-dish-content .view .or {
-        left: 50%;
-        right: initial;
-        margin-left: -5%;
-        margin-top: -10%;
-        width: 10%;
-        height: 10%;
-        background: url('../images/photo_popup_or.png') no-repeat center center;
-        background-size: cover; }
       #snapDishApp .add-dish-content .view .button-new-dish {
         text-align: center;
         border: 0;
@@ -7857,7 +7879,7 @@ a.button {
         color: #768187; }
       #snapDishApp .add-dish-content .view .new-dish-name label {
         position: absolute;
-        bottom: 25px;
+        bottom: 10px;
         width: 80%;
         left: 50%;
         margin-left: -40%;
@@ -7875,7 +7897,7 @@ a.button {
           right: 0; }
       #snapDishApp .add-dish-content .view .new-dish-name input {
         position: absolute;
-        bottom: 25px;
+        bottom: 2px;
         width: 80%;
         left: 50%;
         margin-left: -40%; }

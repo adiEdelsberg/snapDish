@@ -15,7 +15,7 @@
 
 	<!-- jquery -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-	
+
 	<!-- ionic/angularjs js -->
 	<script src="lib/ionic/js/ionic.bundle.js"></script>
 
@@ -43,6 +43,7 @@
 	<script src="scripts/controllers/restaurants.controller.js"></script>
 	<script src="scripts/controllers/restaurant.controller.js"></script>
 	<script src="scripts/controllers/newDish.controller.js"></script>
+	<script src="scripts/controllers/newPhoto.controller.js"></script>
 	<script src="scripts/controllers/dish.controller.js"></script>
 	<script src="scripts/controllers/main.controller.js"></script>
 
@@ -50,19 +51,19 @@
 	<body ng-app="app" ng-controller="MainCtrl" id="snapDishApp">
 
 		<ion-nav-view>
-			<ion-nav-bar>
+			<ion-nav-bar ng-show="showNavBar">
 				<ion-nav-back-button >
 					<i class="ion-arrow-left-b"></i>
 					<i class="logo-back"></i>
 				</ion-nav-back-button>
 			</ion-nav-bar>
-			<button class="menu-snap-dish" ng-click="buttonMenu()">
+			<button ng-show="showNavBar" class="menu-snap-dish" ng-click="buttonMenu()">
 				<i class="ion-navicon-round"></i>
 			</button>
 			<!--<img src="../images/menu.png" >-->
 		</ion-nav-view>
-	
+
 		<!--<script type="text/javascript" src="js/facebookConnectPlugin.js"></script>-->
-	
+
 	</body>
 </html>
