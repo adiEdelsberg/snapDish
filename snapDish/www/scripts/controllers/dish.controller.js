@@ -1,7 +1,7 @@
 angular.module('app')
 
-.controller('DishCtrl', ['$scope', '$rootScope', '$cordovaCamera', '$ionicPlatform', '$stateParams', '$ionicHistory', '$ionicPopup', '$ionicSlideBoxDelegate', 'dish', 'user',
-	function($scope, $rootScope, $cordovaCamera, $ionicPlatform, $stateParams, $ionicHistory, $ionicPopup, $ionicSlideBoxDelegate, dish, user){
+.controller('DishCtrl', ['$scope', '$rootScope', '$state', '$cordovaCamera', '$ionicPlatform', '$stateParams', '$ionicHistory', '$ionicPopup', '$ionicSlideBoxDelegate', 'dish', 'user',
+	function($scope, $rootScope, $state, $cordovaCamera, $ionicPlatform, $stateParams, $ionicHistory, $ionicPopup, $ionicSlideBoxDelegate, dish, user){
 
 		var starsLastRate, currentUser, reportPopup;
 
@@ -156,10 +156,8 @@ angular.module('app')
 
 			$scope.takePicture = function takePicture(userSourchType) {
 					$rootScope.showNavBar = true;
-					return;
-					dish.savePhoto(userSourchType);
-					$state.go('new_photo');
-/*				var optionSourchType = userSourchType === 'camera' ? Camera.PictureSourceType.CAMERA : Camera.PictureSourceType.PHOTOLIBRARY;
+
+				var optionSourchType = userSourchType === 'camera' ? Camera.PictureSourceType.CAMERA : Camera.PictureSourceType.PHOTOLIBRARY;
 
 				var options = {
 					quality : 100,
@@ -181,7 +179,7 @@ angular.module('app')
 
 					alert(error);
 
-				});*/
+				});
 
 			}
 

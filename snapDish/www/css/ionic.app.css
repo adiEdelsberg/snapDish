@@ -7851,9 +7851,9 @@ a.button {
         height: calc(25% - 18px);
         background: #fff; }
         #snapDishApp .add-dish-content .view li.new-dish-name {
-          height: 10%; }
+          height: 20%; }
         #snapDishApp .add-dish-content .view li.new-dish-photo {
-          height: 40%; }
+          height: 30%; }
         #snapDishApp .add-dish-content .view li:last-child {
           background: #ff3366; }
       #snapDishApp .add-dish-content .view .button-new-dish {
