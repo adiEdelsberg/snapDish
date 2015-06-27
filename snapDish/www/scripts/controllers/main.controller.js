@@ -8,7 +8,7 @@ function($scope, $rootScope, $location ,$ionicLoading) {
 		alert('menu')
 	};
 
-	$rootScope.showNavBar = true;
+	$scope.showNavBar = false;
 /*	$rootScope.$on("$locationChangeSuccess", function() {
 
 	});*/

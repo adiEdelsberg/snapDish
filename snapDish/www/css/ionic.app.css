@@ -7593,7 +7593,7 @@ a.button {
   #snapDishApp .nav-bar-title, #snapDishApp .title {
     color: #fff; }
   #snapDishApp .snap-ion-content {
-    background: #e7e8ed; }
+    background: #ffffff; }
   #snapDishApp .sort-by {
     padding-left: 10px; }
   #snapDishApp .login {
@@ -7620,7 +7620,7 @@ a.button {
       color: white;
       font-size: 20px; }
   #snapDishApp .nav-bar-block .bar-header {
-    background: #ff3366; }
+    background: #f17476; }
   #snapDishApp .logo-back {
     position: absolute;
     background: url('../images/logo.png') no-repeat center center;
@@ -7639,7 +7639,7 @@ a.button {
     font-size: 25px;
     color: #fff; }
   #snapDishApp .stars {
-    color: #ff3366; }
+    color: #e06c6e; }
   #snapDishApp .popup-container .popup {
     background-color: rgba(171, 218, 255, 0.9); }
   #snapDishApp .popup-container .popup-body {
@@ -7698,15 +7698,18 @@ a.button {
       background-size: cover; }
   #snapDishApp .resturant-content .dish-list .dish-item {
     padding: 0;
-    margin: 5px;
     border-color: #b8bbbd;
     background-color: white; }
     #snapDishApp .resturant-content .dish-list .dish-item .item-content {
       padding: 0; }
     #snapDishApp .resturant-content .dish-list .dish-item .dish-image {
-      width: 45%;
-      height: 45%;
-      margin: 5px;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      display: inline-block;
+      width: 30.66%;
+      height: 100px;
+      margin: 1.3%;
       border: 1px solid #b8bbbd; }
       #snapDishApp .resturant-content .dish-list .dish-item .dish-image:first-of-type {
         margin-left: 0; }
@@ -7752,8 +7755,8 @@ a.button {
       position: absolute;
       top: 40px;
       left: 50%;
-      margin-left: -137px;
-      font-size: 50px;
+      margin-left: -98px;
+      font-size: 36px;
       z-index: 999; }
     #snapDishApp .dish .dish-footer .add-rating {
       position: absolute;
@@ -7823,7 +7826,6 @@ a.button {
       -webkit-box-shadow: #c9cacc 0px 0px 8px;
       box-shadow: #c9cacc 0px 0px 8px; }
   #snapDishApp .restaurants-content .item-restaurant {
-    margin: 5px;
     border: 1px solid #c6cbcf; }
     #snapDishApp .restaurants-content .item-restaurant h2, #snapDishApp .restaurants-content .item-restaurant p {
       color: #7a7f83; }
@@ -7855,7 +7857,7 @@ a.button {
         #snapDishApp .add-dish-content .view li.new-dish-photo {
           height: 30%; }
         #snapDishApp .add-dish-content .view li:last-child {
-          background: #ff3366; }
+          background: #f37577; }
       #snapDishApp .add-dish-content .view .button-new-dish {
         text-align: center;
         border: 0;

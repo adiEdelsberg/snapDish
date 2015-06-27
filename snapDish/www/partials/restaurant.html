@@ -6,18 +6,20 @@
 		</label>
 	</ion-nav-title>
 	<ion-content class="snap-ion-content resturant-content">
-		<div class="sort-by">sort by | name</div>
+		<!-- <div class="sort-by">sort by | name</div> -->
 		<ion-list class="dish-list">
 			<ion-item class="dish-item" ng-repeat="dish in restaurant.dishes | filter: search" ui-sref="dish({dishId: dish.ID})">
 				<div class="dish-title">
-					<h2 class="dish-name"> | {{dish.NAME}}</h2>
+					<h2 class="dish-name">
+					 {{dish.NAME}}</h2>
 					<div class="stars">
 						<span ng-repeat="star in stars"
 								ng-class="{'ion-ios-star': ($index+1) <= dish.RATING, 'ion-ios-star-outline': ($index+1) > dish.RATING }">
 						</span>
 					</div>
 				</div>
-				<img ng-src="{{photo}}" ng-repeat="photo in dish.PHOTOS track by $index | limitTo: 3" class="dish-image">
+				<div style="background-image: url({{photo}})" ng-repeat="photo in dish.PHOTOS track by $index | limitTo: 3" class="dish-image"></div>
+				<!-- <img ng-src="{{photo}}" ng-repeat="photo in dish.PHOTOS track by $index | limitTo: 3" class="dish-image"> -->
 			</ion-item>
 		</ion-list>
 	</ion-content>

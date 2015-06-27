@@ -2,6 +2,9 @@ angular.module('app')
 
 .controller('RestaurantsCtrl', ['$scope', '$location', '$ionicLoading', 'restaurants', 'user', function($scope, $location, $ionicLoading, restaurants, user){
 
+	//naw bar is false on login page
+	$scope.$parent.showNavBar = true;
+
 	$scope.getUser = function(){
 		alert(JSON.stringify(user.getCurrentUser()));
 	};

@@ -2,8 +2,6 @@
 
 .controller('LoginInBrowserCtrl', ['$scope', '$window', '$state', '$ionicLoading', 'user', function($scope, $window, $state, $ionicLoading, user) {
 
-
-
   // This is called with the results from from FB.getLoginStatus().
   function statusChangeCallback(response) {
     

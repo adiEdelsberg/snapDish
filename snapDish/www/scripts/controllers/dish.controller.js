@@ -149,13 +149,13 @@ angular.module('app')
 			}
 
 			// NEW PHOTO SECTION
-
+ 
 			$scope.addNewPic = function addNewPic() {
-				$rootScope.showNavBar = false;
+				$scope.showNavBar = false;
 			}
 
 			$scope.takePicture = function takePicture(userSourchType) {
-					$rootScope.showNavBar = true;
+					$scope.showNavBar = true;
 
 				var optionSourchType = userSourchType === 'camera' ? Camera.PictureSourceType.CAMERA : Camera.PictureSourceType.PHOTOLIBRARY;
 
